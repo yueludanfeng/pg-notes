@@ -12,7 +12,7 @@ title = "PG Notes"
   copyright = "© 2026 PG Notes"
 
 [params.author]
-  name = "PG 花园"
+  name = "PG Park"
   image = "img/avatar.svg"
   headline = "PostgreSQL / 数据库技术 / 运维案例 / 性能优化"
   bio = "专注 PostgreSQL 技术实践，记录数据库故障分析、SQL 优化、备份恢复、高可用架构与内核学习。"
