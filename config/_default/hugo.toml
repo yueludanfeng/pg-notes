@@ -1,0 +1,32 @@
+theme = "blowfish"
+baseURL = "https://example.com/"
+defaultContentLanguage = "zh-cn"
+title = "PG Notes"
+
+enableRobotsTXT = true
+summaryLength = 26
+hasCJKLanguage = true
+enableEmoji = true
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

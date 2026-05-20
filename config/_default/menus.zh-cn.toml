@@ -1,0 +1,60 @@
+[[main]]
+  name = "首页"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "案例"
+  url = "/categories/postgresql-案例/"
+  weight = 20
+
+[[main]]
+  name = "内功"
+  url = "/categories/postgresql-内功修炼/"
+  weight = 30
+
+[[main]]
+  name = "优化"
+  url = "/categories/sql-优化/"
+  weight = 40
+
+[[main]]
+  name = "高可用"
+  url = "/categories/备份恢复与高可用/"
+  weight = 50
+
+[[main]]
+  name = "笔记"
+  url = "/categories/读书笔记/"
+  weight = 60
+
+[[main]]
+  name = "关于"
+  pageRef = "about"
+  weight = 70
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/"
+  weight = 90
+
+[[footer]]
+  name = "文章"
+  pageRef = "posts"
+  weight = 10
+
+[[footer]]
+  name = "分类"
+  pageRef = "categories"
+  weight = 20
+
+[[footer]]
+  name = "标签"
+  pageRef = "tags"
+  weight = 30
+
+[[footer]]
+  name = "关于"
+  pageRef = "about"
+  weight = 40
