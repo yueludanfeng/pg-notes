@@ -43,4 +43,4 @@ hugo --gc --minify
 
 推送到 GitHub 后，进入仓库 `Settings -> Pages`，将 Source 选择为 `GitHub Actions`。本项目已包含自动部署工作流。
 
-如果使用项目页地址，例如 `https://你的用户名.github.io/pg-personal-site/`，请把 `config/_default/hugo.toml` 里的 `baseURL` 改成这个完整地址。
+如果使用项目页地址，例如 `https://你的用户名.github.io/pg-notes/`，请把 `config/_default/hugo.toml` 里的 `baseURL` 改成这个完整地址。
