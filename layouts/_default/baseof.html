@@ -8,7 +8,7 @@
   {{- partial "head.html" . -}}
   {{- partialCached "init.html" . -}}
 
-  {{ $bodyLayout := "flex flex-col h-screen leading-7 max-w-7xl lg:ml-12 lg:mr-4 px-6 sm:px-8 md:px-12 lg:pl-16 lg:pr-4" }}
+  {{ $bodyLayout := "flex flex-col h-screen leading-7 max-w-7xl m-auto px-6 sm:px-8 md:px-12 lg:px-12" }}
   {{ $bodyColor := "text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
   <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
     <div id="the-top" class="absolute flex self-center">
@@ -27,7 +27,7 @@
     {{ end }}
 
     <div class="relative flex flex-col grow">
-      <div class="flex flex-col lg:flex-row gap-4 lg:gap-8 grow">
+      <div class="flex flex-col lg:flex-row gap-4 lg:gap-6 grow">
         <main id="main-content" class="min-w-0 grow">
           {{ block "main" . }}{{ end }}
           {{ if and (site.Params.footer.showScrollToTop | default true) }}
@@ -36,7 +36,7 @@
         </main>
 
         {{/* 全局右侧标签导航 */}}
-        <aside class="shrink-0 hidden lg:block lg:w-44 xl:w-52 lg:sticky lg:top-[100px] lg:self-start lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto">
+        <aside class="shrink-0 hidden lg:block lg:w-40 xl:w-48 lg:sticky lg:top-[100px] lg:self-start lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto">
           {{ partial "tag-sidebar.html" . }}
         </aside>
       </div>
