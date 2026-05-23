@@ -1,0 +1,50 @@
+{{/* 自定义首页：按年份分组显示所有文章 */}}
+<section class="space-y-8 w-full mt-8">
+  {{ $allPages := (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+  {{ $byYear := $allPages.GroupByDate "2006年" }}
+
+  {{ range sort $byYear "Key" "desc" }}
+    <div>
+      <!-- 年份标题 -->
+      <h2 class="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-4 flex items-center gap-3 pb-2 border-b border-neutral-200 dark:border-neutral-700">
+        {{ .Key }}
+        <span class="text-sm font-normal text-neutral-400 dark:text-neutral-500">{{ len .Pages }} 篇</span>
+      </h2>
+
+      <!-- 文章卡片网格 -->
+      <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+        {{ range .Pages.ByDate.Reverse }}
+          <article class="group border border-neutral-100 dark:border-neutral-700/50 rounded-lg p-4 hover:border-primary-200 dark:hover:border-primary-700/50 transition-all hover:shadow-sm bg-white dark:bg-transparent">
+            <!-- 分类 + 日期 -->
+            <div class="flex items-center justify-between gap-2 mb-2">
+              {{ $cat := .Params.categories }}
+              {{ with index $cat 0 }}
+              <span class="text-[0.65rem] text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2 py-0.5 rounded">{{ . }}</span>
+              {{ end }}
+              <span class="text-[0.65rem] text-neutral-400 whitespace-nowrap">{{ .Date.Format "01-02" }}</span>
+            </div>
+
+            <!-- 标题 -->
+            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-left mb-1">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+
+            <!-- 摘要（如果有） -->
+            {{ with .Description }}
+            <p class="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-2 mt-1 hidden sm:block">{{ . }}</p>
+            {{ end }}
+
+            <!-- 标签 -->
+            {{ with .Params.tags }}
+            <div class="flex flex-wrap gap-1 mt-2">
+              {{ range first 3 . }}
+              <span class="text-[0.55rem] text-neutral-400 dark:text-neutral-500">#{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</section>
