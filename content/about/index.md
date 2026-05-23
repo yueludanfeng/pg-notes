@@ -19,4 +19,6 @@ showTableOfContents: false
 - **网名**: 岳麓丹枫
 - **邮箱**: yueludanfeng@gmail.com
 - **GitHub**: [github.com/yueludanfeng](https://github.com/yueludanfeng)
+- **CSDN**: [blog.csdn.net/yueludanfeng](https://blog.csdn.net/yueludanfeng)
+- **墨天轮**: [www.modb.pro](https://www.modb.pro/)
 - **职业**: PG 数据库工程师
