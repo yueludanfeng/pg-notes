@@ -19,5 +19,6 @@ title = "PG Notes"
   links = [
     { github = "https://github.com/yueludanfeng" },
     { blogger = "https://blog.csdn.net/yueludanfeng" },
+    { modb = "https://www.modb.pro/" },
     { email = "mailto:yueludanfeng@gmail.com" },
   ]
