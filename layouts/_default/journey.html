@@ -41,8 +41,8 @@
           {{ end }}
           <span class="text-[0.65rem] text-neutral-400 whitespace-nowrap">{{ .Date.Format "01-02" }}</span>
         </div>
-        <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-left">
+          <a href="{{ .RelPermalink }}" class="text-left">{{ .Title }}</a>
         </h3>
       </article>
       {{ end }}

@@ -5,7 +5,7 @@
         {{ $isEmail := eq $name "email" }}
         {{ if or (eq $name "blogger") (eq $name "modb") }}
           <a
-            class="flex items-center no-zoom"
+            class="flex items-center author-icon-link"
             href="{{ $url | safeURL }}"
             target="_blank"
             aria-label="{{ $name | title }}"
@@ -13,9 +13,9 @@
             rel="me noopener noreferrer"
           >
             {{ if eq $name "blogger" }}
-              <img src="https://www.csdn.net/favicon.ico" alt="CSDN" class="h-6 w-auto rounded" />
+              <img src="https://www.csdn.net/favicon.ico" alt="CSDN" class="h-6 w-auto rounded" data-no-zoom />
             {{ else if eq $name "modb" }}
-              <img src="https://js-cdn.modb.cc/image/indexlogo.png" alt="墨天轮" class="h-6 w-auto" />
+              <img src="https://js-cdn.modb.cc/image/indexlogo.png" alt="墨天轮" class="h-6 w-auto" data-no-zoom />
             {{ end }}
           </a>
         {{ else }}
