@@ -14,6 +14,16 @@
   weight = 30
 
 [[main]]
+  name = "文档"
+  pageRef = "docs"
+  weight = 35
+
+[[main]]
+  name = "友链"
+  pageRef = "friends"
+  weight = 38
+
+[[main]]
   name = "关于"
   pageRef = "about"
   weight = 40
@@ -38,6 +48,16 @@
   name = "历程"
   pageRef = "journey"
   weight = 30
+
+[[footer]]
+  name = "文档"
+  pageRef = "docs"
+  weight = 35
+
+[[footer]]
+  name = "友链"
+  pageRef = "friends"
+  weight = 38
 
 [[footer]]
   name = "关于"

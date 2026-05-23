@@ -28,9 +28,13 @@
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h3>
 
-            <!-- 摘要（如果有） -->
-            {{ with .Description }}
-            <p class="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-2 mt-1 hidden sm:block">{{ . }}</p>
+            <!-- 摘要 -->
+            {{ $summary := .Description }}
+            {{ if not $summary }}
+              {{ $summary = .Summary | plainify }}
+            {{ end }}
+            {{ with $summary }}
+            <p class="text-sm text-neutral-500 dark:text-neutral-400 line-clamp-3 mt-1.5 hidden sm:block leading-relaxed">{{ . }}</p>
             {{ end }}
 
             <!-- 标签 -->
