@@ -16,7 +16,7 @@
 [[main]]
   identifier = "github"
   pre = "github"
-  url = "https://github.com/"
+  url = "https://github.com/yueludanfeng"
   weight = 90
 
 [[footer]]

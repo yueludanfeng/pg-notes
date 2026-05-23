@@ -16,4 +16,7 @@ showTableOfContents: false
 - 备份恢复、高可用与稳定性建设
 - 数据库论文、源码阅读和工程化笔记
 
-你可以把这里替换成真实姓名、职业经历、技术栈、公众号、GitHub、邮箱和你希望展示的个人介绍。
+- **网名**: 岳麓丹枫
+- **邮箱**: yueludanfeng@gmail.com
+- **GitHub**: [github.com/yueludanfeng](https://github.com/yueludanfeng)
+- **职业**: PG 数据库工程师

@@ -1,0 +1,25 @@
+{{ $recentArticles := .Site.Params.homepage.showRecentItems }}
+{{ $pages := first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)).Pages }}
+{{ $grouped := $pages.GroupByDate "2006年1月" }}
+
+<section class="space-y-6 w-full">
+  {{ range $grouped }}
+    <div class="border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+      <details class="group" open>
+        <summary class="flex items-center justify-between px-4 py-2.5 bg-neutral-50 dark:bg-neutral-800 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700/50 transition-colors select-none">
+          <h3 class="text-base font-semibold text-neutral-700 dark:text-neutral-300">
+            {{ .Key }}
+            <span class="text-xs font-normal text-neutral-400 dark:text-neutral-500 ml-2">{{ len .Pages }} 篇</span>
+          </h3>
+          <span class="text-neutral-400 dark:text-neutral-500 text-xs group-open:hidden">展开 ▾</span>
+          <span class="text-neutral-400 dark:text-neutral-500 text-xs hidden group-open:inline">收起 ▴</span>
+        </summary>
+        <div class="divide-y divide-neutral-100 dark:divide-neutral-700/50">
+          {{ range .Pages }}
+            {{ partial "article-link/simple.html" . }}
+          {{ end }}
+        </div>
+      </details>
+    </div>
+  {{ end }}
+</section>

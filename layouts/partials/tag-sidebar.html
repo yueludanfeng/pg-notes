@@ -11,13 +11,12 @@
       {{ $name := .Page.Title }}
       {{ $size := cond (gt $count 10) "text-sm" (cond (gt $count 3) "text-[0.8rem]" "text-xs") }}
       {{ $weight := cond (gt $count 10) "font-semibold" (cond (gt $count 3) "font-medium" "") }}
-      {{ $color := cond (gt $count 10) "text-primary-700 dark:text-primary-400" (cond (gt $count 3) "text-neutral-700 dark:text-neutral-300" "text-neutral-500 dark:text-neutral-400") }}
       <a href="{{ .Page.RelPermalink }}"
          class="group flex items-center justify-between px-1.5 py-1 -mx-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/50 transition-colors">
-        <span class="{{ $size }} {{ $weight }} {{ $color }} truncate">
+        <span class="{{ $size }} {{ $weight }} text-primary-700 dark:text-primary-400 truncate">
           {{- if gt $count 10 }}<span class="text-[0.6rem] align-top">●</span> {{ end }}{{ $name -}}
         </span>
-        <span class="text-[0.65rem] text-neutral-400 dark:text-neutral-500 tabular-nums ml-1.5 shrink-0">{{ $count }}</span>
+        <span class="text-[0.55rem] text-primary-400 dark:text-primary-500 tabular-nums ml-1 shrink-0">{{ $count }}</span>
       </a>
     {{ end }}
   </nav>
