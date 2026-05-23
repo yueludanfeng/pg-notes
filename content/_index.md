@@ -3,4 +3,4 @@ title: "PG Notes"
 description: "PostgreSQL 数据库技术博客"
 ---
 
-这里是一个专注 PostgreSQL 的个人技术站。后续可以持续沉淀数据库故障案例、SQL 优化、内核学习、备份恢复、高可用架构与工程实践。
+这里专注 PostgreSQL 运维与内核，沉淀故障案例、SQL 优化、备份恢复、高可用等实战内容。👆 通过上方 **[分类](/categories/)** 按主题浏览，或 **[文章](/posts/)** 查看全部。

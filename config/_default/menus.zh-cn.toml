@@ -4,34 +4,24 @@
   weight = 10
 
 [[main]]
-  name = "案例"
-  url = "/categories/postgresql-案例/"
+  name = "分类"
+  pageRef = "categories"
   weight = 20
 
 [[main]]
-  name = "内功"
-  url = "/categories/postgresql-内功修炼/"
+  name = "文章"
+  pageRef = "posts"
   weight = 30
 
 [[main]]
-  name = "优化"
-  url = "/categories/sql-优化/"
+  name = "标签"
+  pageRef = "tags"
   weight = 40
-
-[[main]]
-  name = "高可用"
-  url = "/categories/备份恢复与高可用/"
-  weight = 50
-
-[[main]]
-  name = "笔记"
-  url = "/categories/读书笔记/"
-  weight = 60
 
 [[main]]
   name = "关于"
   pageRef = "about"
-  weight = 70
+  weight = 50
 
 [[main]]
   identifier = "github"
