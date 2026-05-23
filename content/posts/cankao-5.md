@@ -37,13 +37,13 @@ CREATE ROLE
 
 # 修改配置文件 pg_hba. conf
 ```bash
-host    replication     repl     192.168.1.61/                 md5
-host    replication     repl     192.168.1.62/                 md5
+host    replication     repl     [内网IP]/                 md5
+host    replication     repl     [内网IP]/                 md5
 ```
 
 # 创建同步备库 (在备库上操作)
 ```bash
-pg_basebackup -h 192.168.1.61 -U repl -W -Fp -Pv -Xs -R -D /postgres/pgdata
+pg_basebackup -h [内网IP] -U repl -W -Fp -Pv -Xs -R -D /postgres/pgdata
 ```
 
 /pgsql/{soft, app, data, backup, log, archive, rman_backup}

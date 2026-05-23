@@ -49,9 +49,9 @@ pgBackRest旨在成为一个可靠、易于使用的备份和恢复解决方案�
 |   |   |   |
 |---|---|---|
 |地址|主机名|描述|
-|172.18.11.63|kd-app-01|PG高可用计算节点|
-|172.18.11.64|kd-app-02|PG高可用计算节点|
-|172.18.11.65|kd-app-03|备份节点（也是pgmonitor节点），需要注意磁盘空间|
+|[内网IP]|kd-app-01|PG高可用计算节点|
+|[内网IP]|kd-app-02|PG高可用计算节点|
+|[内网IP]|kd-app-03|备份节点（也是pgmonitor节点），需要注意磁盘空间|
 
 ## 4 创建必要目录  
 
@@ -109,13 +109,13 @@ $ ssh-keygen -f /home/postgres/.ssh/id_rsa -t rsa -b 4096 -N ""
 
 ### 6.2 交换公钥
 
-**PG节点1执行:**  $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@172.18.11.65 "cat >> /home/postgres/.ssh/authorized_keys"
+**PG节点1执行:**  $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@[内网IP] "cat >> /home/postgres/.ssh/authorized_keys"
 
-**PG节点2**执行**:**  $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@172.18.11.65 "cat >> /home/postgres/.ssh/authorized_keys"
+**PG节点2**执行**:**  $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@[内网IP] "cat >> /home/postgres/.ssh/authorized_keys"
 
-**备份节点**执行**:** $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@172.18.11.63 "cat >> /home/postgres/.ssh/authorized_keys"
+**备份节点**执行**:** $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@[内网IP] "cat >> /home/postgres/.ssh/authorized_keys"
 
-**备份节点**执行**:** $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@172.18.11.64 "cat >> /home/postgres/.ssh/authorized_keys"
+**备份节点**执行**:** $ cat /home/postgres/.ssh/id_rsa.pub | ssh postgres@[内网IP] "cat >> /home/postgres/.ssh/authorized_keys"
 
 **所有节点**执行**:** # chmod 600 /home/postgres/.ssh/authorized_keys
 
@@ -146,7 +146,7 @@ pg1-path=/var/kingdee/cosmic/postgres/pg_data
 
 log-level-file=detail
 
-repo1-host=172.18.11.65
+repo1-host=[内网IP]
 
 repo1-host-user=postgres
 
@@ -162,7 +162,7 @@ $ cat >/etc/pgbackrest/pgbackrest.conf <<EOF
 
 #pg节点1的地址
 
-pg1-host=172.18.11.63
+pg1-host=[内网IP]
 
 #pg节点1的数据路径
 
@@ -174,7 +174,7 @@ pg1-user=postgres
 
 #pg节点2的地址
 
-pg2-host=172.18.11.64
+pg2-host=[内网IP]
 
 #pg节点2的数据路径
 

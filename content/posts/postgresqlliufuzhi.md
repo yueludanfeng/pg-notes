@@ -20,7 +20,7 @@ Streaming Replication是pg9.0开始提供的传递WAL日志的方式，只要pri
 **startup**：备库实例恢复进程。将wal日志在备库上重放
 
 ```bash
-pg       16776 14632  0 13:33 ?        00:00:00 postgres: wal sender process lzl 172.17.100.150(13338) streaming 0/3002D30
+pg       16776 14632  0 13:33 ?        00:00:00 postgres: wal sender process lzl [内网IP](13338) streaming 0/3002D30
 
 pg       16775 15329  0 13:33 ?        00:00:00 postgres: wal receiver process   streaming 0/3002D30
 pg       15330 15329  0 10:26 ?        00:00:00 postgres: startup process   recovering 000000010000000000000003
@@ -70,8 +70,8 @@ trigger_file和pg_ctl promote在激活时都是一条命令就可以完成激活
 
 **failover示例：**
 环境：
-主库	172.17.100.150	5432
-备库	172.17.100.150	5433
+主库	[内网IP]	5432
+备库	[内网IP]	5433
 
 **1.备库recovery.conf中配置trigger_file**
 ```shell
@@ -110,7 +110,7 @@ $ touch /pg/pg96data_sla/trigger.kenyon
 ```shell
 vi $新备库/recover.conf
 standby_mode = on
-primary_conninfo = 'host=172.17.100.150 port=5433 user=lzl password=lzl'
+primary_conninfo = 'host=[内网IP] port=5433 user=lzl password=[已隐藏]
 recovery_target_timeline = 'latest'
 ```
 配置postgres.conf，将hot_standby = on写入conf，表示备库开启查询
@@ -132,7 +132,7 @@ pid              | 24766
 usesysid         | 16384
 usename          | lzl
 application_name | walreceiver
-client_addr      | 172.17.100.150
+client_addr      | [内网IP]
 client_hostname  | 
 client_port      | 47345
 backend_start    | 2021-07-30 07:44:05.582546+00
@@ -167,7 +167,7 @@ pg_rewind可以用作pg主从的维护工具。当2个pg实例时间线（timeli
 `ERROR: requested WAL segment xxxx has already been removed`
 这时从库只能期待有归档，否则只要重搭。
 **primary_slot_name**：设置slot的名字，表示pg主从开启复制槽。所以开启pg复制槽至少有类似下面的配置
-primary_conninfo = 'host=172.17.100.150 port=5433 user=lzl password=lzl'
+primary_conninfo = 'host=[内网IP] port=5433 user=lzl password=[已隐藏]
 primary_slot_name = 'pg_slot_lzl'
 **max_replication_slots**:复制槽的最大个数，重启生效。如果使用的复制槽不足，从库将启动失败。应将该值设置的较大。在pg9.6版本以下，默认值为0，pg10以上为10。
 
@@ -276,7 +276,7 @@ logic：在replica的基础上增加一些信息以支持逻辑解码，该模�
 
 **从库参数**
 **hot_standby**：on表示打开从库只读
-**primary_conninfo**：从库连接主库的连接串。如primary_conninfo = 'host=172.17.100.150 port=5432 user=lzl password=lzl'
+**primary_conninfo**：从库连接主库的连接串。如primary_conninfo = 'host=[内网IP] port=5432 user=lzl password=[已隐藏]
 trigger_file/promote_trigger_file：激活备库的激活文件。pg 12以前叫trigger_file，pg12及以后为promote_trigger_file
 trigger_file和pg_ctl promote在激活时都是一条命令就可以完成激活备库，前面已经具体演示过
 **wal_receiver_create_temp_slot**：当没有slot时，临时起一个slot（命为primary_slot_name）。默认是off的。
@@ -307,6 +307,6 @@ trigger_file和pg_ctl promote在激活时都是一条命令就可以完成激活
 
 <https://www.cybertec-postgresql.com/en/the-synchronous_commit-parameter/>
 
-<https://blog.csdn.net/m15217321304/article/details/88850146>
+<https://blog.csdn.net/m[手机号]/article/details/88850146>
 
 <https://blog.51cto.com/lishiyan/2460518?source=dra>

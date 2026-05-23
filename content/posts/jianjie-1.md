@@ -472,7 +472,7 @@ archive_command = '/usr/local/pg_probackup-2.4.2/pg_probackup archive-push -B /d
 $ /usr/local/pg_probackup-2.4.2/pg_probackup backup -B /data/pgdata_probackup/ --instance zijie_5432 --remote-user=postgres --remote-host=120.27.250.75 --remote-port=22 -b full
 INFO: Backup start, pg_probackup version: 2.4.2, instance: zijie_5432, backup ID: QH3V3Y, backup mode: FULL, wal mode: ARCHIVE, remote: true, compress-algorithm: none, compress-level: 1
 Password:
-WARNING: This PostgreSQL instance was initialized without data block checksums. pg_probackup have no way to detect data block corruption without them. Reinitialize PGDATA with option '--data-checksums'.
+[已隐藏] This PostgreSQL instance was initialized without data block checksums. pg_probackup have no way to detect data block corruption without them. Reinitialize PGDATA with option '--data-checksums'.
 WARNING: Current PostgreSQL role is superuser. It is not recommended to run backup or checkdb as superuser.
 INFO: Wait for WAL segment /data/pgdata_probackup/wal/zijie_5432/0000000100000000000000E7 to be archived
 WARNING: By default pg_probackup assume WAL delivery method to be ARCHIVE. If continuous archiving is not set up, use '--stream' option to make autonomous backup. Otherwise check that continuous archiving works correctly.

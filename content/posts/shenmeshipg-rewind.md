@@ -36,7 +36,7 @@ LOG:  database system is shut down
 配置pg_rewind的登陆用户登陆源库许可，hba生效需要重启数据库
 ```shell
 vi $source/pg_hba.conf
-host    all       pg         172.17.100.150/32          trust
+host    all       pg         [内网IP]/32          trust
 ```
 
 pg_rewind需要使用高权限用户，pg新版本可以授权，pg老版本最好用超级用户。
@@ -51,7 +51,7 @@ wal_log_hints = on
 ```
 3.pg_rewind命令执行
 ```shell
-[pg@lzl pg96data_sla]$ /pg/pg96/bin/pg_rewind --target-pgdata /pg/pg96data_pri --source-server='host=172.17.100.150 port=5433 user=pg password=oracle  dbname=postgres'
+[pg@lzl pg96data_sla]$ /pg/pg96/bin/pg_rewind --target-pgdata /pg/pg96data_pri --source-server='host=[内网IP] port=5433 user=pg password=[已隐藏]  dbname=postgres'
 servers diverged at WAL position 0/4000098 on timeline 1
 rewinding from last common checkpoint at 0/4000028 on timeline 1
 Done!
@@ -78,7 +78,7 @@ pid              | 24766
 usesysid         | 16384
 usename          | lzl
 application_name | walreceiver
-client_addr      | 172.17.100.150
+client_addr      | [内网IP]
 client_hostname  | 
 client_port      | 47345
 backend_start    | 2021-07-30 07:44:05.582546+00
@@ -112,23 +112,23 @@ postgres=# \du
 
 pg用户是pg server自带的超级用户，跟pg安装用户相同。os的安装用户肯定有修改pg_control的权限
 ```shell
-/pg/pg96/bin/pg_rewind --target-pgdata /pg/pg96data_pri --source-server='host=172.17.100.150 port=5433 user=pg password=oracle  dbname=postgres'
+/pg/pg96/bin/pg_rewind --target-pgdata /pg/pg96data_pri --source-server='host=[内网IP] port=5433 user=pg password=[已隐藏]  dbname=postgres'
 ```
 ## pg_rewind命令报错二
  
 ```shell
-could not connect to server: FATAL:  no pg_hba.conf entry for host "172.17.100.150", user "rewind_user", database "postgres"
+could not connect to server: FATAL:  no pg_hba.conf entry for host "[内网IP]", user "rewind_user", database "postgres"
 Failure, exiting
 ```
  没有配置pg_hba.conf连接
 解决办法：配置用户的pg_hba，例如
 ```shell
-host    all       pg         172.17.100.150/32          trust
+host    all       pg         [内网IP]/32          trust
 ```
 ## pg_rewind命令报错三
  
 ```shell
-[pg@lzl pg96data_sla]$   /pg/pg96/bin/pg_rewind --target-pgdata /pg/pg96data_pri --source-server='host=172.17.100.150 port=5433 user=pg password=oracle  dbname=postgres'
+[pg@lzl pg96data_sla]$   /pg/pg96/bin/pg_rewind --target-pgdata /pg/pg96data_pri --source-server='host=[内网IP] port=5433 user=pg password=[已隐藏]  dbname=postgres'
 
 target server needs to use either data checksums or "wal_log_hints = on"
 ```

@@ -12,7 +12,7 @@ docker rm -f zabbix5
 docker run -d --name zabbix5 -h zabbix5 \
   -p 225:22 -p 23306:3306 -p 2800:80 -p 20051:10051 -p 20052:5432 \
   -v /sys/fs/cgroup:/sys/fs/cgroup \
-  --net=my_network --ip=192.168.1.77 \
+  --net=my_network --ip=[内网IP] \
   --privileged=true \
   lxm_centos76:1.0 /usr/sbin/init
 docker exec -it zabbix5 bash

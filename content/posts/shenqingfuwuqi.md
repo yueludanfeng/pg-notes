@@ -23,7 +23,7 @@ systemctl stop firewalld ; systemctl disable firewalld
 
 
 # 申请服务器
-docker run -d --name zabbix_test -h zabbix_test -p 6281:22 -p 6282:3306 -p 6283:5432 -p 6284:23389 -p 6285:80 -p 6286:10051 --net=my_network --ip=192.168.1.78 --privileged=true mysql01:1.0 /usr/sbin/init
+docker run -d --name zabbix_test -h zabbix_test -p 6281:22 -p 6282:3306 -p 6283:5432 -p 6284:23389 -p 6285:80 -p 6286:10051 --net=my_network --ip=[内网IP] --privileged=true mysql01:1.0 /usr/sbin/init
 
 # 进入服务器
 docker exec -it zabbix_test bash
@@ -85,7 +85,7 @@ zcat /usr/share/doc/zabbix-server-mysql*/create. sql. gz
 * 修改 zabbix 相关配置
 ```bash
 vim /etc/zabbix/zabbix_agentd.conf
-Server=192.168.1.78 #被动模式下必填，将zabbix-server端的ip填入
+Server=[内网IP] #被动模式下必填，将zabbix-server端的ip填入
 Hostname=192.168.1.78_5432
 ServerActive = 
 ```
@@ -93,7 +93,7 @@ ServerActive =
 
 
 vi /etc/zabbix/zabbix_server. conf
-DBPassword=password
+DBPassword=[已隐藏]
 
 vi  /etc/opt/rh/rh-php 72/php-fpm. d/zabbix. conf
 ; php_value[date. timezone] = Europe/Riga

@@ -11,7 +11,7 @@ series: []
   
   一个简单的主键更新，update执行了超过1s，由于并发比较高，cpu直接打满
   ```sql
-  2024-04-01 10:19:36.084 CST,"lzlopr","lzl",158751,"10.33.78.149:51502",66055a6b.26c1f,172,"UPDATE",2024-03-28 19:54:19 CST,528/19816630,970251337,LOG,00000,"duration: 1218.688 ms  plan:
+  2024-04-01 10:19:36.084 CST,"lzlopr","lzl",158751,"[内网IP]:51502",66055a6b.26c1f,172,"UPDATE",2024-03-28 19:54:19 CST,528/19816630,970251337,LOG,00000,"duration: 1218.688 ms  plan:
 Query Text:             update table_a                 set (省略...）=$6           where column_id =$7
 Update on table_a  (cost=0.40..5.49 rows=1 width=2774)
   ->  Index Scan using pk_id on table_a  (cost=0.40..5.49 rows=1 width=2774)

@@ -455,8 +455,8 @@ Bash
 
 ```lisp
 LOAD DATABASE
-     FROM mysql://mysqluser:mysqlpass@mysql-host:3306/mydb
-     INTO postgresql://pguser:pgpass@pg-host:5432/pgdb
+     FROM mysql://user:****@mysql-host:3306/mydb
+     INTO postgresql://user:****@pg-host:5432/pgdb
 
 WITH include drop,         -- 迁移前 DROP 目标表
      create tables,        -- 自动创建表
@@ -526,8 +526,8 @@ pgloader 会自动读取并执行迁移过程，整个流程可能会打印大�
 如果不需要特别的 CAST 规则，也可直接在命令行运行，无需单独配置文件：
 
 ```bash
-pgloader mysql://mysqluser:mysqlpass@mysql-host:3306/mydb \
-         postgresql://pguser:pgpass@pg-host:5432/pgdb
+pgloader mysql://user:****@mysql-host:3306/mydb \
+         postgresql://user:****@pg-host:5432/pgdb
 ```
 
 Bash
@@ -556,7 +556,7 @@ pgloader 会使用默认规则进行迁移，但对某些数据类型或编码�
     - 如果 MySQL 源库为 `latin1`、`utf8mb4` 等，需要在连接字符串中显式指定编码，例如：
         
         ```SQL
-        mysql://user:pass@host:3306/mydb?charset=utf8mb4
+        mysql://user:****@host:3306/mydb?charset=utf8mb4
         ```
         
     - pgloader 默认会将数据以 UTF8 编码传给 PG，若出现无效编码错误，可先在 MySQL 层用 `CONVERT()` 函数清洗或加 `USING` 规则。

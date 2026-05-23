@@ -150,7 +150,7 @@ max_standby_streaming_delay = 900s
 6.logical decoding下，大事务会导致WAL日志堆积
 7.长事务会导致流复制的备库WAL日志部分堆积
 
-索引失效相关文章: https://mp.weixin.qq.com/s?__biz=MzUyOTAyMzMyNg==&mid=2247486460&idx=1&sn=e8f741f27c89175d60791f40f8b997b6&chksm=fa6623cdcd11aadbc9891efaab690ef04fcda53f7336432bed317ed4477ad3359ddffa07a722&token=472580641&lang=zh_CN&scene=21#wechat_redirect
+索引失效相关文章: https://mp.weixin.qq.com/s?__biz=MzUyOTAyMzMyNg==&mid=2247486460&idx=1&sn=e8f741f27c89175d60791f40f8b997b6&chksm=fa6623cdcd11aadbc9891efaab690ef04fcda53f7336432bed317ed4477ad3359ddffa07a722&token=[已隐藏]
 ````
 
 
@@ -588,7 +588,7 @@ where 条件中对索引字段使用了运算: 包括使用了函数, 表达式�
 
 通过 pg_hint_plan  固定了索引
 
-[生产案例 | 费解的索引失效 (qq.com)](https://mp.weixin.qq.com/s?__biz=MzUyOTAyMzMyNg==&mid=2247486460&idx=1&sn=e8f741f27c89175d60791f40f8b997b6&chksm=fa6623cdcd11aadbc9891efaab690ef04fcda53f7336432bed317ed4477ad3359ddffa07a722&token=472580641&lang=zh_CN&scene=21#wechat_redirect)
+[生产案例 | 费解的索引失效 (qq.com)](https://mp.weixin.qq.com/s?__biz=MzUyOTAyMzMyNg==&mid=2247486460&idx=1&sn=e8f741f27c89175d60791f40f8b997b6&chksm=fa6623cdcd11aadbc9891efaab690ef04fcda53f7336432bed317ed4477ad3359ddffa07a722&token=[已隐藏]
 
 ![image-20230627184232462](/images/image-20230627184232462-7862554.png)
 

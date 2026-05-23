@@ -411,7 +411,7 @@ slab分配器是**基于对象**进行管理的。slab系统是一种专门为**
 
 虽然slab有不同的cache和对象，但是slab仍然使用的是物理连续的内存：
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/9147df8131ea21d8042aa16169701110.png)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/9147df8131ea21d8042aa[手机号].png)
 
 （https://i.stack.imgur.com/wo8Gg.png）
 

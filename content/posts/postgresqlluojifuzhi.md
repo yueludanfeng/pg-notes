@@ -260,7 +260,7 @@ UPDATE public.tdecoder222 SET a = 200, b = 'lzlupdate' WHERE a = 200;
 
 - hba访问限制，允许下游使用复制用户访问数据库
 
-`host  lzldb  user1  172.17.100.150/32    md5`
+`host  lzldb  user1  [内网IP]/32    md5`
 
 - 对于发布订阅模式。需要database上的create权限或ssuperuser权限。
 
@@ -368,8 +368,8 @@ pg的内置逻辑复制基于发布订阅模型。发布与订阅模式不是解
 
   | `角色`     | `主机ip`         | `端口` | `库名`  | `schema` | `表名`  | `复制用户`   | `版本` |
   | ---------- | ---------------- | ------ | ------- | -------- | ------- | ------------ | ------ |
-  | `发布节点` | `172.17.100.150` | `5410` | `lzldb` | `public` | `trep1` | `replicate1` | `pg13` |
-  | `订阅节点` | `172.17.100.150` | `5412` | `lzlbd` | `public` | `trep1` | `replicate1` | `pg13` |
+  | `发布节点` | `[内网IP]` | `5410` | `lzldb` | `public` | `trep1` | `replicate1` | `pg13` |
+  | `订阅节点` | `[内网IP]` | `5412` | `lzlbd` | `public` | `trep1` | `replicate1` | `pg13` |
 
   ### 创建发布
 
@@ -380,7 +380,7 @@ pg的内置逻辑复制基于发布订阅模型。发布与订阅模式不是解
   
   #修改pg_hba.conf文件,reload生效
   
-  host    lzldb    replicate1  172.17.100.150/32        md5
+  host    lzldb    replicate1  [内网IP]/32        md5
   
   --创建复制用户并赋权
   
@@ -430,7 +430,7 @@ pg的内置逻辑复制基于发布订阅模型。发布与订阅模式不是解
   
   CREATE SUBSCRIPTION sub_test
   
-  CONNECTION 'host=172.17.100.150 port=5410 dbname=lzldb user=replicate1 password=replicate1'
+  CONNECTION 'host=[内网IP] port=5410 dbname=lzldb user=replicate1 password=[已隐藏]
   
   PUBLICATION pub_lzl1;
   
@@ -440,7 +440,7 @@ pg的内置逻辑复制基于发布订阅模型。发布与订阅模式不是解
   
   -------+---------+----------+----------+------------+--------------------------------------------------------------------------------+-------------+---------------+-----------------
   
-   16394 |  16384 | sub_test |       10 | t          | host=172.17.100.150 port=5410 dbname=lzldb user=replicate1 password=replicate1 | sub_test    | off           | {pub_lzl1}
+   16394 |  16384 | sub_test |       10 | t          | host=[内网IP] port=5410 dbname=lzldb user=replicate1 password=[已隐藏] | sub_test    | off           | {pub_lzl1}
   
    
   

@@ -1,9 +1,5 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
-
-  <div class="flex flex-col lg:flex-row gap-8">
-    <div class="min-w-0 grow">
-
   <article>
     {{/* Hero */}}
     {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
@@ -99,12 +95,6 @@
       {{ end }}
     </footer>
   </article>
-
-    </div>{{/* End of .grow */}}
-
-    {{/* Tag sidebar on the right */}}
-    {{ partial "tag-sidebar.html" . }}
-  </div>
 {{ end }}
 
 {{ define "SingleAuthor" }}

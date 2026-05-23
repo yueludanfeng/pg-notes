@@ -48,7 +48,7 @@ postgres 2422424 1836091  0 Feb20 ?        00:00:00 sh -c /tmp/.mount_XYlnhP
 postgres 2423177 2422424  0 Feb20 ?        00:00:00 openssl s_client -quiet -ign_eof -ignore_unexpected_eof -verify_quiet -connect api.ghcr.pkgforge.dev:443
 postgres 2423178 2422424  0 Feb20 ?        00:00:00 sed 1,/^\r\{0,1\}$/d
 postgres 2493316       1 83 Feb19 ?        6-12:11:13 XkkQuk
-postgres 2996503 3133003  0 Feb17 ?        00:00:00 postgres: postgres imos 192.168.0.100(49896) idle
+postgres 2996503 3133003  0 Feb17 ?        00:00:00 postgres: postgres imos [内网IP](49896) idle
 postgres 3133003       1  0 Feb16 ?        01:09:14 /usr/local/pgsql/bin/postgres -D /data/pgdata
 postgres 3133004 3133003  0 Feb16 ?        00:33:25 postgres: logger 
 postgres 3133005 3133003  0 Feb16 ?        00:00:30 postgres: checkpointer 
@@ -56,22 +56,22 @@ postgres 3133006 3133003  0 Feb16 ?        00:00:10 postgres: background writer
 postgres 3133198 3133003  0 Feb16 ?        00:01:46 postgres: walwriter 
 postgres 3133199 3133003  0 Feb16 ?        00:01:07 postgres: autovacuum launcher 
 postgres 3133200 3133003  0 Feb16 ?        00:00:00 postgres: logical replication launcher 
-postgres 3133243 3133003  0 Feb16 ?        00:06:09 postgres: postgres imos 192.168.0.100(44926) idle
-postgres 3133253 3133003  0 Feb16 ?        00:00:21 postgres: postgres xx 192.168.0.100(44966) idle
-postgres 3133254 3133003  0 Feb16 ?        00:00:12 postgres: postgres xx 192.168.0.100(44976) idle
-postgres 3133255 3133003  0 Feb16 ?        00:00:22 postgres: postgres xx 192.168.0.100(44984) idle
-postgres 3133286 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx 192.168.0.100(44988) idle
-postgres 3133287 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx 192.168.0.100(44996) idle
-postgres 3133288 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx 192.168.0.100(45000) idle
-postgres 3133289 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx 192.168.0.100(45008) idle
-postgres 3133290 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx 192.168.0.100(45018) idle
-postgres 3133291 3133003  0 Feb16 ?        00:00:22 postgres: postgres xx 192.168.0.100(45032) idle
-postgres 3133293 3133003  0 Feb16 ?        00:00:26 postgres: postgres imos 192.168.0.100(45048) idle
-postgres 3133294 3133003  0 Feb16 ?        00:00:12 postgres: postgres xx 192.168.0.100(45050) idle
-postgres 3133296 3133003  0 Feb16 ?        00:00:24 postgres: postgres xx 192.168.0.100(45070) idle
-postgres 3133297 3133003  0 Feb16 ?        00:00:12 postgres: postgres xx 192.168.0.100(45086) idle
-postgres 3133298 3133003  0 Feb16 ?        00:00:21 postgres: postgres xx 192.168.0.100(45098) idle
-postgres 3133299 3133003  0 Feb16 ?        00:00:20 postgres: postgres xx 192.168.0.100(45102) idle
+postgres 3133243 3133003  0 Feb16 ?        00:06:09 postgres: postgres imos [内网IP](44926) idle
+postgres 3133253 3133003  0 Feb16 ?        00:00:21 postgres: postgres xx [内网IP](44966) idle
+postgres 3133254 3133003  0 Feb16 ?        00:00:12 postgres: postgres xx [内网IP](44976) idle
+postgres 3133255 3133003  0 Feb16 ?        00:00:22 postgres: postgres xx [内网IP](44984) idle
+postgres 3133286 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx [内网IP](44988) idle
+postgres 3133287 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx [内网IP](44996) idle
+postgres 3133288 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx [内网IP](45000) idle
+postgres 3133289 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx [内网IP](45008) idle
+postgres 3133290 3133003  0 Feb16 ?        00:00:00 postgres: postgres xx [内网IP](45018) idle
+postgres 3133291 3133003  0 Feb16 ?        00:00:22 postgres: postgres xx [内网IP](45032) idle
+postgres 3133293 3133003  0 Feb16 ?        00:00:26 postgres: postgres imos [内网IP](45048) idle
+postgres 3133294 3133003  0 Feb16 ?        00:00:12 postgres: postgres xx [内网IP](45050) idle
+postgres 3133296 3133003  0 Feb16 ?        00:00:24 postgres: postgres xx [内网IP](45070) idle
+postgres 3133297 3133003  0 Feb16 ?        00:00:12 postgres: postgres xx [内网IP](45086) idle
+postgres 3133298 3133003  0 Feb16 ?        00:00:21 postgres: postgres xx [内网IP](45098) idle
+postgres 3133299 3133003  0 Feb16 ?        00:00:20 postgres: postgres xx [内网IP](45102) idle
 postgres 3550538 4125213  0 Feb16 ?        00:00:00 sh -c /dev/shm/PostgreSQL.6muoW6SC
 postgres 3550810 3550538  0 Feb16 ?        00:00:00 openssl s_client -quiet -ign_eof -ignore_unexpected_eof -verify_quiet -connect api.ghcr.pkgforge.dev:443
 postgres 3550811 3550538  0 Feb16 ?        00:00:00 sed 1,/^\r\{0,1\}$/d
@@ -125,9 +125,9 @@ postgres 1249832 1249825  0 03:37 ?        00:00:00 postgres: autovacuum launche
 postgres 1249833 1249825  0 03:37 ?        00:00:00 postgres: logical replication launcher 
 postgres 1250485 1249825  0 03:37 ?        00:00:00 postgres: postgres foundation 127.0.0.1(39762) idle
 postgres 1250486 1249825  0 03:37 ?        00:00:00 postgres: postgres cds 127.0.0.1(39770) idle
-postgres 1251023 1249825  0 03:37 ?        00:00:00 postgres: postgres cds 192.168.0.100(40016) idle
-postgres 1251024 1249825  0 03:37 ?        00:00:00 postgres: postgres cds 192.168.0.100(40032) idle
-postgres 1251025 1249825  0 03:37 ?        00:00:00 postgres: postgres cds 192.168.0.100(40036) idle
+postgres 1251023 1249825  0 03:37 ?        00:00:00 postgres: postgres cds [内网IP](40016) idle
+postgres 1251024 1249825  0 03:37 ?        00:00:00 postgres: postgres cds [内网IP](40032) idle
+postgres 1251025 1249825  0 03:37 ?        00:00:00 postgres: postgres cds [内网IP](40036) idle
 ...
 root     1256957 1255290  0 03:38 pts/6    00:00:00 grep --color=auto postgres
 

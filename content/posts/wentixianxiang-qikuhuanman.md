@@ -207,7 +207,7 @@ CREATE TABLE replication_table (
 );
 
 CREATE SUBSCRIPTION sub_test
-CONNECTION 'host=127.0.0.1 port=8094 dbname=lzl user=lzl password=qwer'
+CONNECTION 'host=127.0.0.1 port=8094 dbname=lzl user=lzl password=[已隐藏]
 PUBLICATION pub_test;
 
 --source

@@ -38,7 +38,7 @@ series: []
 4. 在备份服务器上的 PostgreSQL 配置文件中，添加以下设置：
 
    ```
-   primary_conninfo = 'host=主服务器IP地址 port=主服务器端口 user=复制用户名称 password=复制用户密码 application_name=备份服务器名称'
+   primary_conninfo = 'host=主服务器IP地址 port=主服务器端口 user=复制用户名称 password=[已隐藏] application_name=备份服务器名称'
    primary_slot_name = 'replication_slot_name'
    ```
 

@@ -16,11 +16,11 @@ series: []
 # 环境规划
 
 ```
-192.168.0.110 node110  master
-192.168.0.111 node111  slave1
-192.168.0.112 node112  slave2
-192.168.0.113 node113  witness
-192.168.0.114 node114  pgpool
+[内网IP] node110  master
+[内网IP] node111  slave1
+[内网IP] node112  slave2
+[内网IP] node113  witness
+[内网IP] node114  pgpool
 
 ```
 
@@ -253,11 +253,11 @@ wget  https://repmgr.org/download/repmgr-5.2.1.tar.gz
 
 ```
 cat >> /etc/hosts <<EOF
-192.168.0.110 node110
-192.168.0.111 node111
-192.168.0.112 node112
-192.168.0.113 node113
-192.168.0.114 node114
+[内网IP] node110
+[内网IP] node111
+[内网IP] node112
+[内网IP] node113
+[内网IP] node114
 EOF
 ```
 
@@ -301,10 +301,10 @@ hostname
 cat >> $PGDATA/pg_hba.conf <<"EOF"
 local repmgr repmgr md5
 host repmgr repmgr 127.0.0.1/32 md5
-host repmgr repmgr 192.168.0.0/24 md5
+host repmgr repmgr [内网IP]/24 md5
 local replication repmgr md5
 host replication repmgr 127.0.0.1/32 md5
-host replication repmgr 192.168.0.0/24 md5
+host replication repmgr [内网IP]/24 md5
 EOF
 ```
 
@@ -373,7 +373,7 @@ psql 'host=node113 user=repmgr dbname=repmgr connect_timeout=2'
 cat > $PGHOME/repmgr.conf << "EOF"
 node_id=1
 node_name=node110
-conninfo='host=192.168.0.110 user=repmgr password=repmgr dbname=repmgr connect_timeout=2'
+conninfo='host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2'
 data_directory='/postgresql/pgdata'
 pg_bindir='/postgresql/pgsql/bin'
 
@@ -394,7 +394,7 @@ EOF
 cat > $PGHOME/repmgr.conf << "EOF"
 node_id=2
 node_name=node111
-conninfo='host=192.168.0.111 user=repmgr password=repmgr dbname=repmgr connect_timeout=2'
+conninfo='host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2'
 data_directory='/postgresql/pgdata'
 pg_bindir='/postgresql/pgsql/bin'
 
@@ -414,7 +414,7 @@ EOF
 cat > $PGHOME/repmgr.conf << "EOF"
 node_id=3
 node_name=node112
-conninfo='host=192.168.0.112 user=repmgr password=repmgr dbname=repmgr connect_timeout=2'
+conninfo='host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2'
 data_directory='/postgresql/pgdata'
 pg_bindir='/postgresql/pgsql/bin'
 
@@ -435,7 +435,7 @@ EOF
 cat > $PGHOME/repmgr.conf << "EOF"
 node_id=4
 node_name=node113
-conninfo='host=192.168.0.113 user=repmgr password=repmgr dbname=repmgr connect_timeout=2'
+conninfo='host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2'
 data_directory='/postgresql/pgdata'
 pg_bindir='/postgresql/pgsql/bin'
 
@@ -587,22 +587,22 @@ INFO: connecting to database
 ERROR: connection to database failed
 DETAIL: 
 could not connect to server: Connection refused
-    Is the server running on host "192.168.0.110" and accepting
+    Is the server running on host "[内网IP]" and accepting
     TCP/IP connections on port 5432?
 
 DETAIL: attempted to connect using:
-  user=repmgr password=repmgr connect_timeout=2 dbname=repmgr host=192.168.0.110 fallback_application_name=repmgr options=-csearch_path=
+  user=repmgr password=[已隐藏] connect_timeout=2 dbname=repmgr host=[内网IP] fallback_application_name=repmgr options=-csearch_path=
  ID | Name    | Role    | Status    | Upstream | Location | Priority | Timeline | Connection string                                                             
 ----+---------+---------+-----------+----------+----------+----------+----------+--------------------------------------------------------------------------------
- 1  | node110 | primary | - failed  | ?        | default  | 100      |          | host=192.168.0.110 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
- 2  | node111 | primary | * running |          | default  | 100      | 4        | host=192.168.0.111 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
- 3  | node112 | standby |   running | node111  | default  | 100      | 3        | host=192.168.0.112 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
- 4  | node113 | witness | * running | node111  | default  | 0        | n/a      | host=192.168.0.113 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
+ 1  | node110 | primary | - failed  | ?        | default  | 100      |          | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
+ 2  | node111 | primary | * running |          | default  | 100      | 4        | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
+ 3  | node112 | standby |   running | node111  | default  | 100      | 3        | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
+ 4  | node113 | witness | * running | node111  | default  | 0        | n/a      | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
 
 WARNING: following issues were detected
   - when attempting to connect to node "node110" (ID: 1), following error encountered :
 "could not connect to server: Connection refused
-    Is the server running on host "192.168.0.110" and accepting
+    Is the server running on host "[内网IP]" and accepting
     TCP/IP connections on port 5432?"
 ```
 
@@ -621,8 +621,8 @@ repmgr -f /postgresql/pgsql/repmgr.conf standby switchover --siblings-follow --f
 pgsql@node110-> repmgr -f /postgresql/pgsql/repmgr.conf standby switchover --siblings-follow --force-rewind --dry-run 
 NOTICE: checking switchover on node "node110" (ID: 1) in --dry-run mode
 INFO: prerequisites for using pg_rewind are met
-INFO: SSH connection to host "192.168.0.111" succeeded
-INFO: able to execute "repmgr" on remote host "192.168.0.111"
+INFO: SSH connection to host "[内网IP]" succeeded
+INFO: able to execute "repmgr" on remote host "[内网IP]"
 INFO: all sibling nodes are reachable via SSH
 INFO: 3 walsenders required, 10 available
 INFO: demotion candidate is able to make replication connection to promotion candidate
@@ -658,7 +658,7 @@ ERROR: unable to execute CHECKPOINT
 INFO: local node 2 can attach to rejoin target node 1
 DETAIL: local node's recovery point: 0/C000028; rejoin target node's fork point: 0/C0000A0
 NOTICE: setting node 2\'s upstream to node 1
-WARNING: unable to ping "host=192.168.0.111 user=repmgr password=repmgr dbname=repmgr connect_timeout=2"
+WARNING: unable to ping "host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2"
 DETAIL: PQping() returned "PQPING_NO_RESPONSE"
 NOTICE: starting server using "/postgresql/pgsql/bin/pg_ctl  -w -D '/postgresql/pgdata' start"
 WARNING: node "node111" attached in state "startup"
@@ -677,10 +677,10 @@ NOTICE: STANDBY SWITCHOVER has completed successfully
 pgsql@node110-> repmgr -f /postgresql/pgsql/repmgr.conf  cluster show
  ID | Name    | Role    | Status    | Upstream | Location | Priority | Timeline | Connection string                                                             
 ----+---------+---------+-----------+----------+----------+----------+----------+--------------------------------------------------------------------------------
- 1  | node110 | primary | * running |          | default  | 100      | 5        | host=192.168.0.110 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
- 2  | node111 | standby |   running | node110  | default  | 100      | 4        | host=192.168.0.111 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
- 3  | node112 | standby |   running | node110  | default  | 100      | 4        | host=192.168.0.112 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
- 4  | node113 | witness | * running | node110  | default  | 0        | n/a      | host=192.168.0.113 user=repmgr password=repmgr dbname=repmgr connect_timeout=2
+ 1  | node110 | primary | * running |          | default  | 100      | 5        | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
+ 2  | node111 | standby |   running | node110  | default  | 100      | 4        | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
+ 3  | node112 | standby |   running | node110  | default  | 100      | 4        | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
+ 4  | node113 | witness | * running | node110  | default  | 0        | n/a      | host=[内网IP] user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=2
 pgsql@node110-> 
 ```
 
@@ -719,13 +719,13 @@ listen_addresses = '*'
 
 
 # - Backend Connection Settings -
-backend_hostname0 = '192.168.0.110'
+backend_hostname0 = '[内网IP]'
 backend_port0 = 5432
 backend_weight0 = 1
 backend_data_directory0 = '/postgresql/pgdata'
 backend_flag0 = 'ALLOW_TO_FAILOVER'
 backend_application_name0 = 'node110'
-backend_hostname1 = '192.168.0.111'
+backend_hostname1 = '[内网IP]'
 backend_port1 = 5432
 backend_weight1 = 1
 backend_data_directory1 = '/postgresql/pgdata'
@@ -733,7 +733,7 @@ backend_flag1 = 'ALLOW_TO_FAILOVER'
 backend_application_name1 = 'node111'
 
 
-backend_hostname2 = '192.168.0.112'
+backend_hostname2 = '[内网IP]'
 backend_port2 = 5432
 backend_weight2 = 1
 backend_data_directory2 = '/postgresql/pgdata'
@@ -919,11 +919,11 @@ postgres=# show pool_nodes;
 ation_delay | replication_state | replication_sync_state | last_status_change  
 ---------+---------------+------+--------+-----------+---------+------------+-------------------+-------
 ------------+-------------------+------------------------+---------------------
- 0       | 192.168.0.110 | 5432 | up     | 0.333333  | primary | 0          | true              | 0     
+ 0       | [内网IP] | 5432 | up     | 0.333333  | primary | 0          | true              | 0     
             |                   |                        | 2021-07-11 20:06:33
- 1       | 192.168.0.111 | 5432 | unused | 0.333333  | standby | 0          | false             | 0     
+ 1       | [内网IP] | 5432 | unused | 0.333333  | standby | 0          | false             | 0     
             |                   |                        | 2021-07-11 20:06:33
- 2       | 192.168.0.112 | 5432 | unused | 0.333333  | standby | 0          | false             | 0     
+ 2       | [内网IP] | 5432 | unused | 0.333333  | standby | 0          | false             | 0     
             |                   |                        | 2021-07-11 20:06:33
 (3 rows)
 ```
@@ -937,7 +937,7 @@ pcp_node_info -U pgpool -h localhost -p 9898 -n 2 -v
 
 pgsql@node114-> pcp_node_info -U pgpool -h localhost -p 9898 -n 0 -v
 Password: 
-Hostname               : 192.168.0.110
+[已隐藏]               : [内网IP]
 Port                   : 5432
 Status                 : 2
 Weight                 : 0.333333
@@ -950,7 +950,7 @@ Last Status Change     : 2021-07-11 20:06:33
 pgsql@node114-> 
 pgsql@node114-> pcp_node_info -U pgpool -h localhost -p 9898 -n 1 -v
 Password: 
-Hostname               : 192.168.0.111
+[已隐藏]               : [内网IP]
 Port                   : 5432
 Status                 : 0
 Weight                 : 0.333333
@@ -963,7 +963,7 @@ Last Status Change     : 2021-07-11 20:06:33
 pgsql@node114-> 
 pgsql@node114-> pcp_node_info -U pgpool -h localhost -p 9898 -n 2 -v
 Password: 
-Hostname               : 192.168.0.112
+[已隐藏]               : [内网IP]
 Port                   : 5432
 Status                 : 0
 Weight                 : 0.333333
@@ -1031,7 +1031,7 @@ test=# select * from test_pgpool;
 
 窗口 2:
 test=# \q
-pgsql@node114-> psql -Upostgres -h 192.168.0.114 -p 9999 -d test
+pgsql@node114-> psql -Upostgres -h [内网IP] -p 9999 -d test
 Password for user postgres: 
 psql (13.3)
 Type "help" for help.
@@ -1051,7 +1051,7 @@ LOG:  DB node id: 1 backend pid: 67106 statement: select * from test_pgpool;
 
 
 窗口3:
-pgsql@node114->  psql -Upostgres -h 192.168.0.114 -p 9999 -d test
+pgsql@node114->  psql -Upostgres -h [内网IP] -p 9999 -d test
 Password for user postgres: 
 psql (13.3)
 Type "help" for help.
@@ -1063,11 +1063,11 @@ LOG:  DB node id: 0 backend pid: 73272 statement: SELECT version()
 ation_delay | replication_state | replication_sync_state | last_status_change  
 ---------+---------------+------+--------+-----------+---------+------------+-------------------+-------
 ------------+-------------------+------------------------+---------------------
- 0       | 192.168.0.110 | 5432 | up     | 0.333333  | primary | 11         | false             | 0     
+ 0       | [内网IP] | 5432 | up     | 0.333333  | primary | 11         | false             | 0     
             |                   |                        | 2021-07-11 20:29:20
- 1       | 192.168.0.111 | 5432 | up     | 0.333333  | standby | 2          | false             | 0     
+ 1       | [内网IP] | 5432 | up     | 0.333333  | standby | 2          | false             | 0     
             |                   |                        | 2021-07-11 20:29:20
- 2       | 192.168.0.112 | 5432 | up     | 0.333333  | standby | 0          | true              | 0     
+ 2       | [内网IP] | 5432 | up     | 0.333333  | standby | 0          | true              | 0     
             |                   |                        | 2021-07-11 20:29:20
 (3 rows)
 

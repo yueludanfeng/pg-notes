@@ -28,9 +28,9 @@ repmgr [OPTIONS] daemon  {start|stop}
 
 # 服务器列表：
 节点名	IP	操作系统	安装软件	备注
-node1	192.168.86.101	CentOS 7.6	PostgreSQL 14.6/repmgr-5.3.3	初始主节点
-node2	192.168.86.102	CentOS 7.6	PostgreSQL 14.6/repmgr-5.3.3	初始备节点
-node3	192.168.86.103	CentOS 7.6	PostgreSQL 14.6/repmgr-5.3.3	初始备节点
+node1	[内网IP]	CentOS 7.6	PostgreSQL 14.6/repmgr-5.3.3	初始主节点
+node2	[内网IP]	CentOS 7.6	PostgreSQL 14.6/repmgr-5.3.3	初始备节点
+node3	[内网IP]	CentOS 7.6	PostgreSQL 14.6/repmgr-5.3.3	初始备节点
 
 # 磁盘
 fdisk /dev/vda
@@ -46,10 +46,10 @@ mount -a
 hostnamectl set-hostname node1
 
 cat >> /etc/hosts << EOF
-192.168.86.100   node0
-192.168.86.101   node1
-192.168.86.102   node2
-192.168.86.103   node3
+[内网IP]   node0
+[内网IP]   node1
+[内网IP]   node2
+[内网IP]   node3
 EOF
 
 
@@ -130,8 +130,8 @@ echo 'sunwaypg' | passwd -f --stdin postgres
 # 安装pg
 wget https://ftp.postgresql.org/pub/source/v14.6/postgresql-14.6.tar.bz2 --no-check-certificate
 tar xjvf postgresql-14.6.tar.bz2
-scp postgresql-14.6.tar.bz2 root@192.168.86.102:/root
-scp postgresql-14.6.tar.bz2 root@192.168.86.103:/root
+scp postgresql-14.6.tar.bz2 root@[内网IP]:/root
+scp postgresql-14.6.tar.bz2 root@[内网IP]:/root
 mkdir -p -m 700 /opt/PostgreSQL/14/data
 chown -R postgres:postgres /opt/PostgreSQL/14/data
 cd postgresql-14.6
@@ -143,9 +143,9 @@ make install-world
 
 # 操作系统免密 postgres
 ssh-keygen -t rsa
-ssh-copy-id -i .ssh/id_rsa.pub postgres@192.168.86.101
-ssh-copy-id -i .ssh/id_rsa.pub postgres@192.168.86.102
-ssh-copy-id -i .ssh/id_rsa.pub postgres@192.168.86.103
+ssh-copy-id -i .ssh/id_rsa.pub postgres@[内网IP]
+ssh-copy-id -i .ssh/id_rsa.pub postgres@[内网IP]
+ssh-copy-id -i .ssh/id_rsa.pub postgres@[内网IP]
 ssh node1 date;ssh node2 date;ssh node3 date
 
 # 安装repmgr
@@ -154,8 +154,8 @@ sudo yum install flex libselinux-devel libxml2-devel libxslt-devel openssl-devel
 sudo yum install yum-utils openjade docbook-dtds docbook-style-dsssl docbook-style-xsl	   
 wget https://repmgr.org/download/repmgr-5.3.3.tar.gz --no-check-certificate
 tar -xzf repmgr-5.3.3.tar.gz
-scp repmgr-5.3.3.tar.gz root@192.168.86.102:/root
-scp repmgr-5.3.3.tar.gz root@192.168.86.103:/root
+scp repmgr-5.3.3.tar.gz root@[内网IP]:/root
+scp repmgr-5.3.3.tar.gz root@[内网IP]:/root
 cd repmgr-5.3.3
 ./configure
 make install
@@ -189,14 +189,14 @@ shared_preload_libraries = 'repmgr'
 vi /opt/PostgreSQL/14/data/pg_hba.conf
 local   replication     repmgr                              trust
 host    replication     repmgr      127.0.0.1/32            trust
-host    replication     repmgr      192.168.86.101/32             trust
-host    replication     repmgr      192.168.86.102/32             trust
-host    replication     repmgr      192.168.86.103/32             trust
+host    replication     repmgr      [内网IP]/32             trust
+host    replication     repmgr      [内网IP]/32             trust
+host    replication     repmgr      [内网IP]/32             trust
 local   repmgr          repmgr                              trust
 host    repmgr          repmgr      127.0.0.1/32            trust
-host    repmgr          repmgr      192.168.86.101/32             trust
-host    repmgr          repmgr      192.168.86.102/32             trust
-host    repmgr          repmgr      192.168.86.103/32             trust
+host    repmgr          repmgr      [内网IP]/32             trust
+host    repmgr          repmgr      [内网IP]/32             trust
+host    repmgr          repmgr      [内网IP]/32             trust
 
 # 启动主库并创建用户
 pg_ctl -D /opt/PostgreSQL/14/data/ -l logfile start
@@ -209,7 +209,7 @@ sql>create database repmgr owner repmgr;
 vi /opt/PostgreSQL/14/data/repmgr.conf
 node_id=1
 node_name=pg101
-conninfo='host=192.168.86.101 port=5432 user=repmgr password=repmgr dbname=repmgr connect_timeout=5'
+conninfo='host=[内网IP] port=5432 user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=5'
 data_directory='/opt/PostgreSQL/14/data'
 pg_bindir='/opt/PostgreSQL/14/bin'
 
@@ -218,21 +218,21 @@ repmgr -f /opt/PostgreSQL/14/data/repmgr.conf cluster show
 
 # 2个从节点 配置repmgr
 # 从节点 clone
-repmgr -h 192.168.86.101 -U repmgr -p 5432 -d repmgr -f /opt/PostgreSQL/14/data/repmgr.conf standby clone --dry-run
-repmgr -h 192.168.86.101 -U repmgr -p 5432 -d repmgr -f /opt/PostgreSQL/14/data/repmgr.conf standby clone
-repmgr -h 192.168.86.101 -U repmgr -p 5432 -d repmgr -f /opt/PostgreSQL/14/data/repmgr.conf -F standby clone
+repmgr -h [内网IP] -U repmgr -p 5432 -d repmgr -f /opt/PostgreSQL/14/data/repmgr.conf standby clone --dry-run
+repmgr -h [内网IP] -U repmgr -p 5432 -d repmgr -f /opt/PostgreSQL/14/data/repmgr.conf standby clone
+repmgr -h [内网IP] -U repmgr -p 5432 -d repmgr -f /opt/PostgreSQL/14/data/repmgr.conf -F standby clone
 # 节点2
 vi /opt/PostgreSQL/14/data/repmgr.conf
 node_id=2
 node_name=pg102
-conninfo='host=192.168.86.102 port=5432 user=repmgr password=repmgr dbname=repmgr connect_timeout=5'
+conninfo='host=[内网IP] port=5432 user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=5'
 data_directory='/opt/PostgreSQL/14/data'
 pg_bindir='/opt/PostgreSQL/14/bin'
 # 节点3
 vi /opt/PostgreSQL/14/data/repmgr.conf
 node_id=3
 node_name=pg103
-conninfo='host=192.168.86.103 port=5432 user=repmgr password=repmgr dbname=repmgr connect_timeout=5'
+conninfo='host=[内网IP] port=5432 user=repmgr password=[已隐藏] dbname=repmgr connect_timeout=5'
 data_directory='/opt/PostgreSQL/14/data'
 pg_bindir='/opt/PostgreSQL/14/bin'
 
@@ -253,7 +253,7 @@ pg_ctl -D '/opt/PostgreSQL/14/data' -W -m fast stop
 # promote 命令从任意从节点提升为主节点
 repmgr -f /opt/PostgreSQL/14/data/repmgr.conf  standby promote --siblings-follow
 # 再把主节点加入进来
-repmgr -f /opt/PostgreSQL/14/data/repmgr.conf node rejoin -d 'host=192.168.86.102 dbname=repmgr user=repmgr password=repmgr port=5432'
+repmgr -f /opt/PostgreSQL/14/data/repmgr.conf node rejoin -d 'host=[内网IP] dbname=repmgr user=repmgr password=[已隐藏] port=5432'
 
 
 
@@ -289,7 +289,7 @@ pg_ctl -D /opt/PostgreSQL/14/data stop -l logfile
 repmgr -f /opt/PostgreSQL/14/data/repmgr.conf cluster show
 
 # 修复后 未启动数据库 重新加入集群
-repmgr -f /opt/PostgreSQL/14/data/repmgr.conf node rejoin -d'host=192.168.86.103 port=5432 user=repmgr dbname=repmgr connect_timeout=2'
+repmgr -f /opt/PostgreSQL/14/data/repmgr.conf node rejoin -d'host=[内网IP] port=5432 user=repmgr dbname=repmgr connect_timeout=2'
 
 # 修复后 未启动数据库 重新加入集群，如果有事务就会导致两边不一致，不能加入集群
 # 必须通过参数参能rewind
@@ -298,7 +298,7 @@ wal_log_hints=on
 pg_ctl -D /opt/PostgreSQL/14/data start -l logfile
 ......
 pg_ctl -D /opt/PostgreSQL/14/data stop -l logfile
-repmgr -f /opt/PostgreSQL/14/data/repmgr.conf node rejoin -d 'host=192.168.86.103 port=5432 user=repmgr dbname=repmgr connect_timeout=2' --force-rewind
+repmgr -f /opt/PostgreSQL/14/data/repmgr.conf node rejoin -d 'host=[内网IP] port=5432 user=repmgr dbname=repmgr connect_timeout=2' --force-rewind
 
 # 定期维护时不希望切换
 repmgr -f /opt/PostgreSQL/14/data/repmgr.conf service pause 

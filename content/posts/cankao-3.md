@@ -19,19 +19,19 @@ series: []
 # 宿主机
 ```bash
 docker rm -f paf 01
-docker run -d --name paf 01 -h paf 01 -p 5277:22 -p 5278:3306 -p 5279:5432 -p 5280:23389 --net=my_network --ip=192.168.1.93 --privileged=true lxm_centos76:1.0 /usr/sbin/init
+docker run -d --name paf 01 -h paf 01 -p 5277:22 -p 5278:3306 -p 5279:5432 -p 5280:23389 --net=my_network --ip=[内网IP] --privileged=true lxm_centos76:1.0 /usr/sbin/init
 docker rm -f paf 02
-docker run -d --name paf 02 -h paf 02 -p 5281:22 -p 5282:3306 -p 5283:5432 -p 5284:23389 --net=my_network --ip=192.168.1.94 --privileged=true lxm_centos76:1.0 /usr/sbin/init
+docker run -d --name paf 02 -h paf 02 -p 5281:22 -p 5282:3306 -p 5283:5432 -p 5284:23389 --net=my_network --ip=[内网IP] --privileged=true lxm_centos76:1.0 /usr/sbin/init
 docker rm -f paf 03
-docker run -d --name paf 03 -h paf 03 -p 5285:22 -p 5286:3306 -p 5287:5432 -p 5288:23389 --net=my_network --ip=192.168.1.95 --privileged=true lxm_centos76:1.0 /usr/sbin/init
+docker run -d --name paf 03 -h paf 03 -p 5285:22 -p 5286:3306 -p 5287:5432 -p 5288:23389 --net=my_network --ip=[内网IP] --privileged=true lxm_centos76:1.0 /usr/sbin/init
 
 ```
 
 # [all]
 ```bash
-echo '192.168.1.93 paf 01' >> /etc/hosts
-echo '192.168.1.94 paf 02' >> /etc/hosts
-echo '192.168.1.95 paf 03' >> /etc/hosts
+echo '[内网IP] paf 01' >> /etc/hosts
+echo '[内网IP] paf 02' >> /etc/hosts
+echo '[内网IP] paf 03' >> /etc/hosts
 
 su - pgsql
 cat >> ~/. bash_profile <<EOF
@@ -127,13 +127,13 @@ pg_autoctl create postgres  --hostname paf03 --auth trust --ssl-self-signed --mo
 
 # 在 monitor 中测试 psql 连接 `paf02` 与 `paf03`
 ```
-psql 'postgres://pgautofailover_monitor@192.168.1.94:5432,192.168.1.95:5432/postgres?target_session_attrs=read-write' -c "select inet_server_addr()"
+psql 'postgres://pgautofailover_monitor@[内网IP]:5432,[内网IP]:5432/postgres?target_session_attrs=read-write' -c "select inet_server_addr()"
 
 
-[pgsql@paf01 data]$  psql 'postgres://pgautofailover_monitor@192.168.1.94:5432,192.168.1.95:5432/postgres?target_session_attrs=read-write' -c "select inet_server_addr()"
+[pgsql@paf01 data]$  psql 'postgres://pgautofailover_monitor@[内网IP]:5432,[内网IP]:5432/postgres?target_session_attrs=read-write' -c "select inet_server_addr()"
  inet_server_addr 
 ------------------
- 192.168.1.94
+ [内网IP]
 (1 row)
 ```
 

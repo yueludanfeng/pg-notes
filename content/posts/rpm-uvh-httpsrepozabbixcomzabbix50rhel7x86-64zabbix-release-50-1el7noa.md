@@ -109,7 +109,7 @@ createdb -O zabbix zabbix
 
    编辑配置文件 /etc/zabbix/zabbix_server.conf
 
-   `DBPassword=password`
+   `DBPassword=[已隐藏]
 
    ##### f. 为Zabbix前端配置PHP
 

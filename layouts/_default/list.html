@@ -13,9 +13,6 @@
     {{ end }}
   {{ end }}
 
-  <div class="flex flex-col lg:flex-row gap-8">
-    <div class="min-w-0 grow">
-
   {{/* Header */}}
   <header>
     {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
@@ -141,10 +138,4 @@
     </section>
   {{ end }}
   {{ partial "pagination.html" . }}
-
-    </div>{{/* End of .grow */}}
-
-    {{/* Tag sidebar on the right */}}
-    {{ partial "tag-sidebar.html" . }}
-  </div>
 {{ end }}

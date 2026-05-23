@@ -12,7 +12,7 @@ series: []
 docker rm -f lxmzabbix5_2
 docker run -d --name lxmzabbix5_2 -h lxmzabbix5_2     -p 6293:22 -p 6294:3306 -p 6295:80 -p 6296:10051     -v /sys/fs/cgroup:/sys/fs/cgroup     --privileged=true     lxm_centos76:1.0 /usr/sbin/init
 docker exec -it lxmzabbix5_2 bash
-172.18.0.2
+[内网IP]
 
 yum -y install wget
 rm -rf /etc/yum.repos.d/* 
@@ -75,7 +75,7 @@ vim /etc/zabbix/zabbix_server.conf
 DBHost=localhost 
 DBName=zabbix 
 DBUser=zabbix 
-DBPassword=123 
+DBPassword=[已隐藏] 
 ### 查看修改是否成功 grep '^DB' /etc/zabbix/zabbix_server.conf
 
 
@@ -102,7 +102,7 @@ netstat -lntup
 docker rm -f mysql
 docker run -d --name mysql -h mysql     -p 6393:22 -p 6394:3306 -p 6395:80 -p 6396:10051     -v /sys/fs/cgroup:/sys/fs/cgroup     --privileged=true     lxm_centos76:1.0 /usr/sbin/init
 docker exec -it mysql bash
-172.18.0.3 
+[内网IP] 
 ```
 
 # 安装配置 zabbix-agent
@@ -127,8 +127,8 @@ cat /etc/zabbix/zabbix_agentd.conf|grep '^[Host|Server]'
 
 vi /etc/zabbix/zabbix_agentd.conf
 修改为:
-Server=172.18.0.2
-Hostname=172.18.0.3
+Server=[内网IP]
+Hostname=[内网IP]
 
 systemctl restart zabbix-agent
 systemctl enable zabbix-agent
@@ -155,13 +155,13 @@ vi /var/lib/zabbix/.my.cnf
 [mysql]
 host=localhost
 user=root
-password=lxm
+password=[已隐藏]
 socket=/data/mysql3306/tmp/mysql.sock
 
 [mysqladmin]
 host=localhost
 user=root
-password=lxm
+password=[已隐藏]
 socket=/data/mysql3306/tmp/mysql.sock
 ```
 
