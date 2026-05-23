@@ -1,36 +1,68 @@
 {{ define "main" }}
-<article class="max-w-3xl">
-  <header class="mb-10">
-    <h1 class="text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+{{ $allPages := (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+{{ $byYear := $allPages.GroupByDate "2006" }}
+
+<div class="max-w-4xl mx-auto">
+  <header class="mb-8">
+    <h1 class="text-3xl font-extrabold text-neutral-900 dark:text-neutral-100">{{ .Title }}</h1>
+    <p class="mt-1 text-sm text-neutral-400">共 {{ len $allPages }} 篇文章</p>
   </header>
 
-  {{ $allPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-  {{ $byYear := $allPages.GroupByDate "2006" }}
+  <!-- 年份锚点导航 -->
+  <nav class="flex flex-wrap gap-2 mb-8 border-b border-neutral-200 dark:border-neutral-700 pb-4">
+    {{ range sort $byYear "Key" "desc" }}
+    <a href="#year-{{ .Key }}" class="text-sm px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-400 transition-colors">
+      {{ .Key }}年 <span class="text-neutral-400">({{ len .Pages }})</span>
+    </a>
+    {{ end }}
+  </nav>
 
-  {{/* 每年详情 */}}
+  <!-- 按年份分组的文章列表 -->
   {{ range sort $byYear "Key" "desc" }}
-  <section class="mb-8">
-    <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 mb-4 flex items-center gap-3">
-      {{ .Key }}
-      <span class="text-sm font-normal text-neutral-400 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-800 px-2 py-0.5 rounded-full">{{ len .Pages }} 篇</span>
+  <section id="year-{{ .Key }}" class="mb-10">
+    <h2 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
+      <span class="w-1.5 h-5 bg-primary-500 rounded-full inline-block"></span>
+      {{ .Key }}年
+      <span class="text-sm font-normal text-neutral-400">{{ len .Pages }} 篇</span>
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2">
+
+    <div class="space-y-1">
       {{ range .Pages.ByDate.Reverse }}
-      <article class="group border border-neutral-100 dark:border-neutral-700/50 rounded-lg p-4 hover:border-primary-200 dark:hover:border-primary-700/50 transition-all">
-        <div class="flex items-start justify-between gap-2 mb-1.5">
-          {{ $cat := .Params.categories }}
-          {{ with index $cat 0 }}
-          <span class="text-[0.65rem] text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2 py-0.5 rounded">{{ . }}</span>
+      <article class="group flex items-start gap-4 py-3 px-3 -mx-3 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+        <time class="text-sm text-neutral-400 dark:text-neutral-500 whitespace-nowrap pt-0.5 font-mono shrink-0 w-20">{{ .Date.Format "2006-01-02" }}</time>
+        <div class="flex-1 min-w-0">
+          <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          {{ $summary := .Description }}
+          {{ if not $summary }}
+            {{ $summary = .Summary | plainify }}
           {{ end }}
-          <span class="text-[0.65rem] text-neutral-400 whitespace-nowrap">{{ .Date.Format "01-02" }}</span>
+          {{ with $summary }}
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-2">{{ . }}</p>
+          {{ end }}
+          {{ with .Params.tags }}
+          <div class="flex flex-wrap gap-1.5 mt-1.5">
+            {{ range first 3 . }}
+            <span class="text-xs text-primary-600/70 dark:text-primary-400/70 bg-primary-50 dark:bg-primary-900/20 px-1.5 py-0.5 rounded">#{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
         </div>
-        <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-left">
-          <a href="{{ .RelPermalink }}" class="text-left">{{ .Title }}</a>
-        </h3>
       </article>
       {{ end }}
     </div>
   </section>
   {{ end }}
-</article>
+</div>
+
+<script>
+document.querySelectorAll('a[href^="#year-"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
 {{ end }}
