@@ -1,0 +1,26 @@
+{{/* 右侧标签导航 */}}
+{{ $tags := .Site.Taxonomies.tags.ByCount }}
+{{ if gt (len $tags) 0 }}
+<div class="tag-sidebar shrink-0 hidden lg:block lg:w-56 lg:ps-8">
+  <div class="lg:sticky {{ if hasPrefix site.Params.header.layout "fixed" }}lg:top-[130px]{{ else }}lg:top-10{{ end }}">
+    <h3 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-3">
+      🏷️ 标签
+    </h3>
+    <nav class="flex flex-wrap gap-1.5">
+      {{ range $tags }}
+        {{ $count := .Count }}
+        {{ $size := cond (gt $count 15) "text-sm" (cond (gt $count 5) "text-xs" "text-[0.65rem]") }}
+        {{ $weight := cond (gt $count 15) "font-semibold" (cond (gt $count 5) "font-medium" "font-normal") }}
+        {{ $color := cond (gt $count 15) "bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300" (cond (gt $count 5) "bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300" "bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400") }}
+        <a href="{{ .Page.RelPermalink }}"
+           class="inline-block px-2 py-0.5 rounded-md {{ $size }} {{ $weight }} {{ $color }} hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors">
+          {{ .Page.Title }}<span class="ms-1 opacity-50">{{ $count }}</span>
+        </a>
+      {{ end }}
+    </nav>
+    <a href="/tags/" class="block mt-3 text-xs text-primary-600 dark:text-primary-400 hover:underline">
+      查看全部 →
+    </a>
+  </div>
+</div>
+{{ end }}
