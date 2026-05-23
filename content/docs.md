@@ -52,18 +52,22 @@ showTableOfContents: true
 
 ## 中文资源
 
-- [PG 中文社区文档](https://pg.center/docs/) — 官方手册中文翻译及社区资源
-- [PostgreSQL 中文手册 (pgdocs.cn)](https://www.pgdocs.cn/) — 社区维护的中文文档
-- [墨天轮 PostgreSQL 社区](https://www.modb.pro/db/postgresql) — 中文技术文章与问答
-- [PGfans 中文社区](https://www.pgfans.cn/) — PostgreSQL 中文问答社区
-- [PG 中文维基 (wiki.postgresql.ac.cn)](https://wiki.postgresql.ac.cn/) — 中文 Wiki 知识库
+| 名称 | 说明 | 链接 |
+|------|------|------|
+| PG 中文社区文档 | 官方手册中文翻译及社区资源 | [pg.center](https://pg.center/docs/) |
+| PostgreSQL 中文手册 | 社区维护的中文文档 | [pgdocs.cn](https://www.pgdocs.cn/) |
+| 墨天轮 PostgreSQL 社区 | 中文技术文章与问答 | [modb.pro](https://www.modb.pro/db/postgresql) |
+| PGfans 中文社区 | PostgreSQL 中文问答社区 | [pgfans.cn](https://www.pgfans.cn/) |
+| PG 中文维基 | 中文 Wiki 知识库 | [wiki.postgresql.ac.cn](https://wiki.postgresql.ac.cn/) |
 
 ## 学习资源
 
-- [PostgreSQL Wiki](https://wiki.postgresql.org/) — 官方维基，包含 FAQ、性能优化、故障排查
-- [PG Howto 中文版](https://postgres-howto.cn/#/) — PostgreSQL 实用技巧与最佳实践中文指南
-- [PostgreSQL 内参：深入解析运行原理](https://postgres-internals.cn/) — PG 内核运行原理中文版
-- [Planet PostgreSQL](https://planet.postgresql.org/) — 社区博客聚合
-- [Use The Index, Luke](https://use-the-index-luke.com/zh) — SQL 索引原理与优化教程
-- [PostgreSQL Exercises](https://pgexercises.com/) — 在线交互式 SQL 练习
-- [The Internals of PostgreSQL](https://www.interdb.jp/pg/) — PG 内核原理（日文/英文/中文）
+| 名称 | 说明 | 链接 |
+|------|------|------|
+| PostgreSQL Wiki | 官方维基，FAQ、性能优化、故障排查 | [wiki.postgresql.org](https://wiki.postgresql.org/) |
+| PG Howto 中文版 | PostgreSQL 实用技巧与最佳实践中文指南 | [postgres-howto.cn](https://postgres-howto.cn/#/) |
+| PostgreSQL 内参 | PG 内核运行原理中文版 | [postgres-internals.cn](https://postgres-internals.cn/) |
+| Planet PostgreSQL | 社区博客聚合 | [planet.postgresql.org](https://planet.postgresql.org/) |
+| Use The Index, Luke | SQL 索引原理与优化教程 | [use-the-index-luke.com](https://use-the-index-luke.com/zh) |
+| PostgreSQL Exercises | 在线交互式 SQL 练习 | [pgexercises.com](https://pgexercises.com/) |
+| The Internals of PostgreSQL | PG 内核原理（日文/英文/中文） | [interdb.jp](https://www.interdb.jp/pg/) |
