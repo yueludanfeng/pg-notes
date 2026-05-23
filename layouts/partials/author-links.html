@@ -5,7 +5,7 @@
         {{ $isEmail := eq $name "email" }}
         {{ if or (eq $name "blogger") (eq $name "modb") }}
           <a
-            class="hover:text-primary-700 dark:hover:text-primary-400 flex items-center"
+            class="flex items-center no-zoom"
             href="{{ $url | safeURL }}"
             target="_blank"
             aria-label="{{ $name | title }}"
