@@ -18,5 +18,6 @@ title = "PG Notes"
   bio = "专注 PostgreSQL 技术实践，记录数据库故障分析、SQL 优化、备份恢复、高可用架构与内核学习。"
   links = [
     { github = "https://github.com/yueludanfeng" },
+    { blogger = "https://blog.csdn.net/yueludanfeng" },
     { email = "mailto:yueludanfeng@gmail.com" },
   ]
