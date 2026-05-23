@@ -3,7 +3,7 @@ title: "Docker 安装小麦苗 PG (多个版本)"
 date: 2023-09-17
 description: "```bash"
 categories: ["安装部署"]
-tags: ["Docker", "安装部署", "小麦苗"]
+tags: ["Docker", "安装部署"]
 series: []
 ---
 
