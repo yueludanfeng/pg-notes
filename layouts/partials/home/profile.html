@@ -1,4 +1,7 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+{{ $allPages := (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+{{ $categories := .Site.Taxonomies.categories }}
+{{ $yearCount := len ($allPages.GroupByDate "2006") }}
 
 <!-- 首页 Hero 区域 -->
 <div class="relative w-full -mx-0 mb-8 flex flex-col items-center justify-center text-center px-4 py-9">
@@ -37,6 +40,14 @@
   <div class="mt-1 text-2xl">
     {{ partialCached "author-links.html" . }}
   </div>
+  <!-- 统计数据 -->
+  <div class="flex flex-wrap items-center justify-center gap-5 mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+    <span class="flex items-center gap-1"><span class="font-semibold text-neutral-700 dark:text-neutral-300">{{ len $allPages }}</span> 篇文章</span>
+    <span class="text-neutral-300 dark:text-neutral-600">|</span>
+    <span class="flex items-center gap-1"><span class="font-semibold text-neutral-700 dark:text-neutral-300">{{ len $categories }}</span> 个分类</span>
+    <span class="text-neutral-300 dark:text-neutral-600">|</span>
+    <span class="flex items-center gap-1"><span class="font-semibold text-neutral-700 dark:text-neutral-300">{{ $yearCount }}</span> 年创作</span>
+  </div>
 </div>
 
 <article
@@ -46,9 +57,8 @@
   <section class="prose dark:prose-invert w-full">{{ .Content }}</section>
 </article>
 
-<!-- 最近文章：参考 vonng.com 风格的列表式布局 -->
-{{ $allPages := (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-{{ $recentCount := 8 }}
+<!-- 最近文章 -->
+{{ $recentCount := 12 }}
 <section class="w-full mt-6">
   <h2 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
     <span class="w-1.5 h-5 bg-primary-500 rounded-full inline-block"></span>
@@ -61,11 +71,15 @@
       <!-- 日期 -->
       <time class="text-sm text-neutral-400 dark:text-neutral-500 whitespace-nowrap pt-0.5 font-mono shrink-0 w-20">{{ .Date.Format "2006-01-02" }}</time>
 
-      <!-- 标题 + 摘要 -->
+      <!-- 标题 + 元信息 + 摘要 -->
       <div class="flex-1 min-w-0">
-        <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h3>
+        <div class="flex items-baseline gap-3">
+          <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <!-- 字数 / 阅读时长 -->
+          <span class="text-xs text-neutral-400 dark:text-neutral-500 whitespace-nowrap shrink-0">{{ .WordCount }} 字 · {{ .ReadingTime }} 分钟</span>
+        </div>
         {{ $summary := .Description }}
         {{ if not $summary }}
           {{ $summary = .Summary | plainify }}
