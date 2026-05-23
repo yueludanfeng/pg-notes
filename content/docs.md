@@ -6,6 +6,14 @@ showReadingTime: false
 showTableOfContents: true
 ---
 
+## 官方与相关站点
+
+| 名称 | 链接 | 简介 |
+|------|------|------|
+| PostgreSQL 官网 | [postgresql.org](https://www.postgresql.org/) | 全球最先进的开源数据库 |
+| Citus Data 官网 | [citusdata.com](https://www.citusdata.com/) | PostgreSQL 分布式扩展 |
+| PostGIS 官网 | [postgis.net](https://postgis.net/) | PostgreSQL 空间数据库扩展 |
+
 ## 官方手册
 
 | 版本 | 在线阅读 | PDF |

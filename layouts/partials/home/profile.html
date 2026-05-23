@@ -1,58 +1,41 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
-{{ $bgImage := resources.Get "img/elephant.png" }}
 
-<!-- 首页 Hero 背景区域 -->
-<div class="relative w-full -mx-0 mb-8 rounded-xl overflow-hidden shadow-sm border border-neutral-200/50 dark:border-neutral-700/30" style="min-height: 280px;">
-  <!-- 大象背景水印 -->
-  {{ if $bgImage }}
-    {{ $bgFinal := $bgImage }}
-    {{ if not $disableImageOptimization }}
-      {{ $bgFinal = $bgImage.Resize (print "800x q85") }}
+<!-- 首页 Hero 区域 -->
+<div class="relative w-full -mx-0 mb-8 flex flex-col items-center justify-center text-center px-4 py-9">
+  {{ with .Site.Params.Author.image }}
+    {{ $authorImage := "" }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $authorImage = resources.GetRemote . }}
+    {{ else }}
+      {{ $authorImage = resources.Get . }}
     {{ end }}
-    <div class="absolute inset-0 bg-no-repeat pointer-events-none opacity-[0.12] dark:opacity-[0.10]"
-         style="background-image: url('{{ $bgFinal.RelPermalink }}'); background-size: 200px auto; background-position: calc(100% + 30px) calc(50% + 10px); background-repeat: repeat;">
-    </div>
+    {{ if $authorImage }}
+      {{ $final := $authorImage }}
+      {{ $squareImage := $authorImage }}
+      {{ if not (or $disableImageOptimization (eq $authorImage.MediaType.SubType "svg")) }}
+        {{ $final = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
+        {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
+        {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
+      {{ end }}
+      <img
+        class="mb-3 h-36 w-36 rounded-full shadow-md"
+        width="144"
+        height="144"
+        alt="{{ $.Site.Params.Author.name | default `Author` }}"
+        src="{{ $final.RelPermalink }}"
+        data-zoom-src="{{ $squareImage.RelPermalink }}">
+    {{ end }}
   {{ end }}
-  <!-- 顶部渐变遮罩 -->
-  <div class="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white/60 to-transparent dark:from-primary-950/20 dark:via-neutral-800/40 dark:to-transparent"></div>
-
-  <!-- 内容 -->
-  <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 py-9">
-    {{ with .Site.Params.Author.image }}
-      {{ $authorImage := "" }}
-      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-        {{ $authorImage = resources.GetRemote . }}
-      {{ else }}
-        {{ $authorImage = resources.Get . }}
-      {{ end }}
-      {{ if $authorImage }}
-        {{ $final := $authorImage }}
-        {{ $squareImage := $authorImage }}
-        {{ if not (or $disableImageOptimization (eq $authorImage.MediaType.SubType "svg")) }}
-          {{ $final = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
-          {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
-          {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
-        {{ end }}
-        <img
-          class="mb-3 h-36 w-36 rounded-full shadow-md"
-          width="144"
-          height="144"
-          alt="{{ $.Site.Params.Author.name | default `Author` }}"
-          src="{{ $final.RelPermalink }}"
-          data-zoom-src="{{ $squareImage.RelPermalink }}">
-      {{ end }}
-    {{ end }}
-    <h1 class="text-4xl font-extrabold">
-      {{ .Site.Params.Author.name | default .Site.Title }}
-    </h1>
-    {{ with .Site.Params.Author.headline }}
-      <h2 class="text-xl text-neutral-500 dark:text-neutral-400 mt-1">
-        {{ . | markdownify }}
-      </h2>
-    {{ end }}
-    <div class="mt-1 text-2xl">
-      {{ partialCached "author-links.html" . }}
-    </div>
+  <h1 class="text-4xl font-extrabold">
+    {{ .Site.Params.Author.name | default .Site.Title }}
+  </h1>
+  {{ with .Site.Params.Author.headline }}
+    <h2 class="text-xl text-neutral-500 dark:text-neutral-400 mt-1">
+      {{ . | markdownify }}
+    </h2>
+  {{ end }}
+  <div class="mt-1 text-2xl">
+    {{ partialCached "author-links.html" . }}
   </div>
 </div>
 
@@ -105,7 +88,7 @@
   <!-- 显示更多按钮 -->
   {{ if gt (len $allPages) $recentCount }}
   <div class="mt-6 text-center">
-    <a href="/posts/"
+    <a href="{{ "/journey/" | relURL }}"
        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 font-medium hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-colors border border-primary-200 dark:border-primary-800/50">
       显示更多
       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
