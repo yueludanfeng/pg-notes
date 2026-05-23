@@ -1,84 +1,24 @@
-{{/* 全局右侧导航：分类 + 年度统计 + 热门标签 + 热门文章 */}}
-{{ $categories := .Site.Taxonomies.categories }}
+{{/* 全局右侧标签导航 */}}
 {{ $tags := .Site.Taxonomies.tags.ByCount }}
-{{ $allPages := (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-{{ $byYear := $allPages.GroupByDate "2006" }}
-
-<div class="py-3 space-y-5">
-
-  <!-- 分类目录 -->
-  {{ if gt (len $categories) 0 }}
-  <div>
-    <h3 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2 pb-1.5 border-b border-neutral-200 dark:border-neutral-700">
-      📂 分类
-    </h3>
-    <nav class="flex flex-col gap-0.5">
-      {{ range $name, $taxonomy := $categories }}
-      {{ $count := len $taxonomy.Pages }}
-      <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}/"
-         class="group flex items-center justify-between px-1.5 py-1 -mx-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/50 transition-colors">
-        <span class="text-sm text-neutral-700 dark:text-neutral-300 truncate">{{ $name }}</span>
-        <span class="text-[0.65rem] text-neutral-400 dark:text-neutral-500 tabular-nums ml-1 shrink-0">{{ $count }}</span>
-      </a>
-      {{ end }}
-    </nav>
-  </div>
-  {{ end }}
-
-  <!-- 年度统计 -->
-  {{ $sortedYears := sort $byYear "Key" "desc" }}
-  {{ if gt (len $sortedYears) 0 }}
-  <div>
-    <h3 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2 pb-1.5 border-b border-neutral-200 dark:border-neutral-700">
-      📅 年度统计
-    </h3>
-    <nav class="flex flex-col gap-0.5">
-      {{ range first 4 $sortedYears }}
-      <a href="{{ ref page "/journey" }}#year-{{ .Key }}"
-         class="group flex items-center justify-between px-1.5 py-1 -mx-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/50 transition-colors">
-        <span class="text-sm text-neutral-700 dark:text-neutral-300">{{ .Key }}年</span>
-        <span class="text-[0.65rem] text-neutral-400 dark:text-neutral-500 tabular-nums ml-1 shrink-0">{{ len .Pages }} 篇</span>
-      </a>
-      {{ end }}
-    </nav>
-  </div>
-  {{ end }}
-
-  <!-- 热门标签 -->
-  {{ if gt (len $tags) 0 }}
-  <div>
-    <h3 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2 pb-1.5 border-b border-neutral-200 dark:border-neutral-700">
-      🏷️ 热门标签
-    </h3>
-    <div class="flex flex-wrap gap-1.5">
-      {{ range first 15 $tags }}
+{{ if gt (len $tags) 0 }}
+<div class="py-3">
+  <h3 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2 pb-1.5 border-b border-neutral-200 dark:border-neutral-700">
+    🏷️ 标签
+  </h3>
+  <nav class="flex flex-col">
+    {{ range $tags }}
       {{ $count := .Count }}
       {{ $name := .Page.Title }}
-      {{ $size := cond (gt $count 20) "text-[0.75rem] font-semibold" (cond (gt $count 10) "text-[0.7rem] font-medium" "text-[0.65rem]") }}
+      {{ $size := cond (gt $count 10) "text-sm" (cond (gt $count 3) "text-[0.8rem]" "text-xs") }}
+      {{ $weight := cond (gt $count 10) "font-semibold" (cond (gt $count 3) "font-medium" "") }}
       <a href="{{ .Page.RelPermalink }}"
-         class="{{ $size }} px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-400 transition-colors">
-        {{ $name }}<span class="ml-0.5 text-neutral-400">({{ $count }})</span>
+         class="group flex items-center justify-between px-1.5 py-1 -mx-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/50 transition-colors">
+        <span class="{{ $size }} {{ $weight }} text-primary-700 dark:text-primary-400 truncate">
+          {{- if gt $count 10 }}<span class="text-[0.6rem] align-top">●</span> {{ end }}{{ $name -}}
+        </span>
+        <span class="text-[0.55rem] text-primary-400 dark:text-primary-500 tabular-nums ml-1 shrink-0">{{ $count }}</span>
       </a>
-      {{ end }}
-    </div>
-  </div>
-  {{ end }}
-
-  <!-- 热门文章 Top 5（按标题长度粗略判断 / 实际可按其他指标） -->
-  <div>
-    <h3 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2 pb-1.5 border-b border-neutral-200 dark:border-neutral-700">
-      🔥 热门推荐
-    </h3>
-    <nav class="flex flex-col gap-1">
-      {{ $hotPages := first 5 (sort $allPages "WordCount" "desc") }}
-      {{ range $hotPages }}
-      <a href="{{ .RelPermalink }}"
-         class="group flex items-start gap-2 px-1.5 py-1 -mx-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/50 transition-colors">
-        <span class="text-xs text-primary-500 mt-0.5 shrink-0">{{ .WordCount }}字</span>
-        <span class="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{{ .Title }}</span>
-      </a>
-      {{ end }}
-    </nav>
-  </div>
-
+    {{ end }}
+  </nav>
 </div>
+{{ end }}
