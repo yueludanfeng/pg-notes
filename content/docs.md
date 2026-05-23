@@ -61,6 +61,8 @@ showTableOfContents: true
 ## 学习资源
 
 - [PostgreSQL Wiki](https://wiki.postgresql.org/) — 官方维基，包含 FAQ、性能优化、故障排查
+- [PG Howto 中文版](https://postgres-howto.cn/#/) — PostgreSQL 实用技巧与最佳实践中文指南
+- [PostgreSQL 内参：深入解析运行原理](https://postgres-internals.cn/) — PG 内核运行原理中文版
 - [Planet PostgreSQL](https://planet.postgresql.org/) — 社区博客聚合
 - [Use The Index, Luke](https://use-the-index-luke.com/zh) — SQL 索引原理与优化教程
 - [PostgreSQL Exercises](https://pgexercises.com/) — 在线交互式 SQL 练习
