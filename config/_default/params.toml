@@ -30,8 +30,8 @@ smartTOCHideUnfocusedChildren = false
   layout = "profile"
   showRecent = true
   showRecentItems = 12
-  showMoreLink = true
-  showMoreLinkDest = "posts"
+showMoreLink = false
+showMoreLinkDest = "posts"
   cardView = true
   cardViewScreenWidth = false
 
