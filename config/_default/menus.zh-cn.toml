@@ -9,9 +9,14 @@
   weight = 20
 
 [[main]]
+  name = "历程"
+  pageRef = "journey"
+  weight = 30
+
+[[main]]
   name = "关于"
   pageRef = "about"
-  weight = 30
+  weight = 40
 
 [[main]]
   identifier = "github"
@@ -30,8 +35,8 @@
   weight = 20
 
 [[footer]]
-  name = "标签"
-  pageRef = "tags"
+  name = "历程"
+  pageRef = "journey"
   weight = 30
 
 [[footer]]
