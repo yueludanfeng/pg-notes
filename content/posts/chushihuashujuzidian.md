@@ -2,7 +2,7 @@
 title: "初始化数据字典"
 date: 2025-05-27
 description: "在没有pg_class的时候，数据库怎么访问系统表？这个问题可以分成两个阶段来看："
-categories: ["PostgreSQL 笔记"]
+categories: ["统计信息"]
 tags: ["内存管理", "分区表", "安装部署", "索引"]
 series: []
 ---

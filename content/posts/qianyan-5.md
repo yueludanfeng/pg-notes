@@ -2,7 +2,7 @@
 title: "前言"
 date: 2025-05-27
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["备份恢复", "锁"]
 series: []
 ---

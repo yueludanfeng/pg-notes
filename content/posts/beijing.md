@@ -2,7 +2,7 @@
 title: "背景"
 date: 2023-08-29
 description: "PostgreSQL是一个强类型数据库，因此你输入的变量、常量是什么类型，是强绑定的，例如"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["PostgreSQL"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "PG 分区表"
 date: 2023-09-10
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["分区表"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "案例-insert value偶发慢分析"
 date: 2025-05-27
 description: "业务insert value偶发变慢，当我去查看活动会话的时候写入慢问题已经缓解了。"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "WAL", "内存管理", "参数配置", "锁"]
 series: []
 ---

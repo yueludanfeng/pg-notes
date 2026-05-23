@@ -2,7 +2,7 @@
 title: "log_temp_files PG 临时文件使用发现以及解决方法"
 date: 2023-08-26
 description: "Work_mem is the memory area used by queries for operations such as JOINS, ORDER BY, DISTINCT etc . Default value is 4 MB"
-categories: ["PostgreSQL 笔记"]
+categories: ["统计信息"]
 tags: ["PG临时文件", "参数配置", "执行计划", "统计信息"]
 series: []
 ---

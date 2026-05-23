@@ -2,7 +2,7 @@
 title: "Postgresql中order by limit 索引选择错误导致查询很慢"
 date: 2024-12-15
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["PostgreSQL", "索引"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "如何成为一名合格的PostgreSQL DBA"
 date: 2025-07-26
 description: "- PostgreSQL的安装：[https://www.postgresql.org/download/](https://www.postgresql.org/download/) 安装PostgreSQL数据库。"
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["PostgreSQL", "VACUUM", "WAL", "分区表", "参数配置", "备份恢复", "安装部署", "流复制", "监控", "索引", "连接池", "逻辑复制", "高可用"]
 series: []
 ---

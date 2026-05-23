@@ -2,7 +2,7 @@
 title: "读源码前先搭一个可调试环境"
 date: 2026-04-16
 description: "用最小步骤准备 PostgreSQL 编译、启动、断点和日志观察。"
-categories: ["读书笔记"]
+categories: ["体系结构"]
 tags: ["PostgreSQL", "源码", "调试"]
 series: ["源码阅读"]
 ---

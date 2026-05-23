@@ -2,7 +2,7 @@
 title: "体系结构"
 date: 2025-05-27
 description: "![Shared Memory in PostgreSQL](https://i-blog.csdnimg.cn/blog_migrate/20ffbf3377b1385e5cb4ab7cdb7517d0.png)"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "WAL", "内存管理", "分区表", "参数配置", "安装部署", "执行计划", "流复制", "索引", "统计信息", "逻辑复制", "锁"]
 series: []
 ---

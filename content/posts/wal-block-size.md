@@ -2,7 +2,7 @@
 title: "wal_block_size"
 date: 2023-08-28
 description: "查询：'wal_block_size'"
-categories: ["PostgreSQL 笔记"]
+categories: ["MVCC与事务"]
 tags: ["WAL", "内存管理", "参数配置", "备份恢复"]
 series: []
 ---

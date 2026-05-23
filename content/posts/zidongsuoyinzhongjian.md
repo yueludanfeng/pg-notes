@@ -2,7 +2,7 @@
 title: "自动索引重建"
 date: 2023-08-16
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["索引"]
 series: []
 ---

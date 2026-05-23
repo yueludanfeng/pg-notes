@@ -2,7 +2,7 @@
 title: "pg_basebackup checkpoint 使用fast与 spread 区别"
 date: 2023-06-27
 description: "在 PostgreSQL 中，`pg_basebackup` 是一个用于进行基于流复制的基础备份的工具。它用于创建一个主数据库的副本，可以作为备份或用于设置流复制的初始节点。"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["PostgreSQL", "WAL", "参数配置", "备份恢复", "流复制"]
 series: []
 ---

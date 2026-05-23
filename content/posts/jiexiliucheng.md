@@ -2,7 +2,7 @@
 title: "解析流程"
 date: 2024-08-30
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["执行计划"]
 series: []
 ---

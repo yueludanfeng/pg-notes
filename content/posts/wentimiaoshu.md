@@ -2,7 +2,7 @@
 title: "问题描述"
 date: 2025-05-27
 description: "postgresql数据库执行delete报错：```attempted to delete invisible tuple```，执行同样条件的select不报错"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "安装部署", "索引", "锁"]
 series: []
 ---

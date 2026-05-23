@@ -2,7 +2,7 @@
 title: "申请服务器"
 date: 2023-08-14
 description: "* 创建以下必需目录。"
-categories: ["PostgreSQL 笔记"]
+categories: ["监控"]
 tags: ["Docker", "WAL", "参数配置", "安装部署", "监控"]
 series: []
 ---

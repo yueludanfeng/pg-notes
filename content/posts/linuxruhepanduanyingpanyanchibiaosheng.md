@@ -2,7 +2,7 @@
 title: "Linux如何判断硬盘延迟飙升"
 date: 2023-06-27
 description: "在 Linux 系统中，你可以使用一些工具和命令来判断硬盘延迟是否飙升。下面是一些常用的方法："
-categories: ["PostgreSQL 笔记"]
+categories: ["统计信息"]
 tags: ["统计信息"]
 series: []
 ---

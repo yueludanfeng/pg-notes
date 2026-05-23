@@ -2,7 +2,7 @@
 title: "PG插件"
 date: 2023-05-27
 description: "* *[(38条消息) pg_enterprise_views 偶然发现的神仙PG插件！！！_Yuan-Zhou的博客-CSDN博客](https://blog.csdn.net/Chrisyyyyyyy/article/details/1"
-categories: ["PostgreSQL 笔记"]
+categories: ["统计信息"]
 tags: ["插件", "统计信息"]
 series: []
 ---

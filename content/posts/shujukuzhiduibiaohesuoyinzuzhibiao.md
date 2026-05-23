@@ -2,7 +2,7 @@
 title: "数据库之堆表和索引组织表"
 date: 2023-07-03
 description: "堆表(heap table）和索引组织表（Index Oragnization Table，简称 IOT)是两种数据表的存储结构。pg 中的表是堆表。mysql Innodb 引擎中的表是索引组织表。oracle 中既支持堆表，也支持索引组"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["索引"]
 series: []
 ---

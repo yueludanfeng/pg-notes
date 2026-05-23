@@ -2,7 +2,7 @@
 title: "参考"
 date: 2023-07-31
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["Docker", "HA", "WAL", "参数配置", "备份恢复", "安装部署", "流复制", "高可用"]
 series: []
 ---

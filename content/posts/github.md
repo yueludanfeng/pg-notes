@@ -2,7 +2,7 @@
 title: "github"
 date: 2025-01-12
 description: "* 博客"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "jsonb", "内存管理", "参数配置", "备份恢复", "执行计划", "索引", "统计信息", "锁", "高可用"]
 series: []
 ---

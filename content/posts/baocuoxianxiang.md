@@ -2,7 +2,7 @@
 title: "报错现象"
 date: 2023-06-29
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "参数配置", "备份恢复", "流复制", "逻辑复制", "锁"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "PG 查看索引膨胀率"
 date: 2024-08-30
 description: "> 参考: [How to check and resolve Bloat in PostgreSQL - Highgo Software Inc.](https://www.highgo.ca/2021/03/20/how-to-chec"
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["VACUUM", "索引", "膨胀"]
 series: []
 ---

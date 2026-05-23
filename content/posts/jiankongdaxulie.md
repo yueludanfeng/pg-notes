@@ -2,7 +2,7 @@
 title: "监控大序列"
 date: 2023-08-21
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["参数配置", "监控"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "安装基本包"
 date: 2024-08-30
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["WAL", "参数配置", "备份恢复", "安装部署", "流复制"]
 series: []
 ---

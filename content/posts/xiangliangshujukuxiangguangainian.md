@@ -2,7 +2,7 @@
 title: "向量数据库相关概念"
 date: 2025-05-27
 description: "LLM的模型发展历史，[Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond](https://arxiv.org/pdf/2304.13712)["
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["内存管理", "分区表", "参数配置", "索引"]
 series: []
 ---

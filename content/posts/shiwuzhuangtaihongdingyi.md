@@ -2,7 +2,7 @@
 title: "事务状态宏定义 :"
 date: 2023-07-15
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["体系结构"]
 tags: ["PostgreSQL"]
 series: []
 ---

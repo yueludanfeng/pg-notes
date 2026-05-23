@@ -2,7 +2,7 @@
 title: "前言"
 date: 2025-05-27
 description: "提起《三国演义》似乎每个人都可以说几个其中的人物、情节，但是你真的看过《三国演义》原著吗？"
-categories: ["PostgreSQL 笔记"]
+categories: ["安全与权限"]
 tags: ["PostgreSQL"]
 series: []
 ---

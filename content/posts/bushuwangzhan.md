@@ -2,7 +2,7 @@
 title: "部署网站"
 date: 2026-05-20
 description: "重新做完了，已经成功上线。"
-categories: ["PostgreSQL 笔记"]
+categories: ["安装部署"]
 tags: ["PostgreSQL"]
 series: []
 ---

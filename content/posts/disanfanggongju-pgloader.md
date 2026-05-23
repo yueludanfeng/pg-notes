@@ -2,7 +2,7 @@
 title: "第三方工具 pgloader"
 date: 2023-06-28
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["数据迁移"]
 tags: ["PostgreSQL"]
 series: []
 ---

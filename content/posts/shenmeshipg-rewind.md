@@ -2,7 +2,7 @@
 title: "什么是pg_rewind?"
 date: 2025-05-27
 description: "​"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["PostgreSQL", "WAL", "参数配置", "备份恢复", "安装部署", "流复制"]
 series: []
 ---

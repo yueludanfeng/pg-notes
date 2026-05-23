@@ -2,7 +2,7 @@
 title: "数组类型"
 date: 2023-06-26
 description: "当在 PostgreSQL 中使用 GIN 索引来处理数组类型时，可以通过以下示例来说明："
-categories: ["PostgreSQL 笔记"]
+categories: ["MVCC与事务"]
 tags: ["参数配置", "执行计划", "索引"]
 series: []
 ---

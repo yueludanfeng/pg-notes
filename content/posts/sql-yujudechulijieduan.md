@@ -2,7 +2,7 @@
 title: "SQL 语句的处理阶段"
 date: 2025-01-26
 description: "一个 SQL 语句——简称查询——主要分为四个阶段进行处理："
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["WAL", "执行计划", "索引", "统计信息"]
 series: []
 ---

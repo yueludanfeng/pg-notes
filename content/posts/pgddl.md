@@ -2,7 +2,7 @@
 title: "pgddl"
 date: 2023-09-10
 description: "https://www.modb.pro/db/48196"
-categories: ["PostgreSQL 笔记"]
+categories: ["体系结构"]
 tags: ["PostgreSQL"]
 series: []
 ---

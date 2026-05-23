@@ -2,7 +2,7 @@
 title: "卸载老的 docker"
 date: 2026-04-15
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["Docker", "参数配置", "安装部署"]
 series: []
 ---

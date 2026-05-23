@@ -2,7 +2,7 @@
 title: "问题现象"
 date: 2025-05-27
 description: "业务昨晚对sql进行了更新，之前没有DATE_CREATED字段（是分区键），跑的很快。发版后加了分区字段，本身是为了减少分区数量的访问，但是加了以后UPDATE执行却变慢了。"
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["分区表", "执行计划", "索引", "统计信息"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "PostgreSQL prepared statements in pgSQL"
 date: 2023-06-20
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["开发"]
 tags: ["PostgreSQL"]
 series: []
 ---

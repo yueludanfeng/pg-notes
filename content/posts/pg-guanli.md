@@ -2,7 +2,7 @@
 title: "PG 管理"
 date: 2023-07-23
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["postgresql"]
 series: []
 ---

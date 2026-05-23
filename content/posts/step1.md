@@ -2,7 +2,7 @@
 title: "step1"
 date: 2025-05-27
 description: "```shell"
-categories: ["PostgreSQL 笔记"]
+categories: ["内存管理"]
 tags: ["WAL", "内存管理", "分区表", "参数配置", "执行计划", "索引", "统计信息"]
 series: []
 ---

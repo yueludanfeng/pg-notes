@@ -2,7 +2,7 @@
 title: "参考文章 1"
 date: 2023-07-06
 description: "* PG14版本还引入了 client_connection_check_interval 参数,每隔一段时间检测 client 是否离线，如果已经离线，则快速结束掉正在运行的 query，防止连接已经失效了，但是还在执行查询返回给客户端，"
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["参数配置"]
 series: []
 ---

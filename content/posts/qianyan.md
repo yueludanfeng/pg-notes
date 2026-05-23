@@ -2,7 +2,7 @@
 title: "前言"
 date: 2025-05-27
 description: "近期（2023年6月17日），由中国开源软件推进联盟PG分会发起的“PostgreSQL数据库技术峰会成都站”圆满举行。我也有幸作为演讲嘉宾参加了此次峰会，收获很多。"
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["内存管理", "锁", "高可用"]
 series: []
 ---

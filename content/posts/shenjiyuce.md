@@ -2,7 +2,7 @@
 title: "神级预测"
 date: 2025-05-27
 description: "​"
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["备份恢复"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "PG_HINT_PLAN"
 date: 2023-09-10
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["PostgreSQL", "执行计划"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "作用"
 date: 2026-03-06
 description: "@[TOC]"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "内存管理", "参数配置", "安装部署", "索引", "统计信息", "锁"]
 series: []
 ---

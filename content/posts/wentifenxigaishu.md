@@ -2,7 +2,7 @@
 title: "问题分析概述"
 date: 2025-05-27
 description: "库总是OOM，分析到是执行计划生成有问题，planning time 1秒，planning shared hit 100w。一通分析，定位到是统计信息基表pg_statistic膨胀，由于会话首次SQL执行时的CatCacheMiss，导"
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["VACUUM", "WAL", "内存管理", "分区表", "参数配置", "备份恢复", "执行计划", "流复制", "索引", "统计信息"]
 series: []
 ---

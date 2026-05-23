@@ -2,7 +2,7 @@
 title: "小结"
 date: 2025-05-27
 description: "一个简单的主键更新，update执行了超过1s，由于并发比较高，cpu直接打满"
-categories: ["PostgreSQL 笔记"]
+categories: ["MVCC与事务"]
 tags: ["VACUUM", "WAL", "备份恢复", "执行计划", "索引", "统计信息"]
 series: []
 ---

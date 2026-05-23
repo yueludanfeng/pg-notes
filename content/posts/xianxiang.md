@@ -2,7 +2,7 @@
 title: "现象"
 date: 2025-05-27
 description: "案例：执行计划发生变化，plan选择了错误的索引，sql由毫秒级变成秒级。后面收集统计信息后，业务sql还是慢，最后通过删除DAILY_DATE时间索引建立(DAILY_DATE,A_ID)组合索引才解决。"
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["VACUUM", "分区表", "参数配置", "备份恢复", "执行计划", "索引", "统计信息"]
 series: []
 ---

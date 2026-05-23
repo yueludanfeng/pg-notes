@@ -2,7 +2,7 @@
 title: "问题分析"
 date: 2025-05-27
 description: "pg数据库中执行sql时，ORDER BY limit 10比ORDER BY limit 100更慢"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["内存管理", "执行计划", "索引", "统计信息"]
 series: []
 ---

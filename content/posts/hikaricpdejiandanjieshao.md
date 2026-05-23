@@ -2,7 +2,7 @@
 title: "HikariCP的简单介绍"
 date: 2025-05-27
 description: "hikari-光，hikariCP取义：像光一样轻和快的Connetion Pool。这个几乎只用java写的中间件连接池，极其轻量并注重性能，HikariCP目前已是SpringBoot默认的连接池，伴随着SpringBoot和微服务的普"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["内存管理", "参数配置", "监控", "连接池", "锁"]
 series: []
 ---

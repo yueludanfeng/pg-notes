@@ -2,7 +2,7 @@
 title: "参考 :"
 date: 2023-07-20
 description: "https://www.bbsmax.com/A/QW5YkQoOzm/"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["参数配置", "备份恢复", "流复制"]
 series: []
 ---

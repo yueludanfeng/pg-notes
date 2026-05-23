@@ -2,7 +2,7 @@
 title: "vacuum truncate"
 date: 2025-05-27
 description: ">TRUNCATE---Specifies that `VACUUM` should attempt to truncate off any empty pages at the end of the table and allow the"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "索引", "统计信息", "锁"]
 series: []
 ---

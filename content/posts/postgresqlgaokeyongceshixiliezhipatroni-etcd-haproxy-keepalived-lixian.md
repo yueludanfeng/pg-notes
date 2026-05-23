@@ -2,7 +2,7 @@
 title: "PostgreSQL高可用测试系列之Patroni + etcd + HAProxy + Keepalived 离线部署"
 date: 2023-07-30
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["PostgreSQL", "高可用"]
 series: []
 ---

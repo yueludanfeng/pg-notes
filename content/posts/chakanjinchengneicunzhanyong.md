@@ -2,7 +2,7 @@
 title: "查看进程内存占用"
 date: 2023-07-14
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["安装部署"]
 tags: ["内存管理", "安装部署"]
 series: []
 ---

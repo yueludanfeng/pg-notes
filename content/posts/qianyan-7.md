@@ -2,7 +2,7 @@
 title: "前言"
 date: 2025-05-27
 description: "弗朗斯·德瓦尔（Frans de Waal)的代表作《黑猩猩政治》成书于1982年，是它的首部书籍作品，也是美国国会新任议员的被推荐读物。之前看的他另一部作品的《万智有灵》是2016年的作品，时间跨度居然这么大。《万智有灵》介绍了许多动物行"
-categories: ["PostgreSQL 笔记"]
+categories: ["安全与权限"]
 tags: ["PostgreSQL"]
 series: []
 ---

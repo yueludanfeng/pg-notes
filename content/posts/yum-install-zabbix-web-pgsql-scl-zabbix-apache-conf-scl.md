@@ -2,7 +2,7 @@
 title: "yum install zabbix-web-pgsql-scl zabbix-apache-conf-scl"
 date: 2023-08-14
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["监控"]
 tags: ["Docker", "WAL", "参数配置", "安装部署", "监控"]
 series: []
 ---

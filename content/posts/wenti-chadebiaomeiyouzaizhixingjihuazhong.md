@@ -2,7 +2,7 @@
 title: "问题：查的表没有在执行计划中"
 date: 2025-05-27
 description: "sql："
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["分区表", "执行计划", "索引"]
 series: []
 ---

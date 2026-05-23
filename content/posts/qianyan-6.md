@@ -2,7 +2,7 @@
 title: "前言"
 date: 2025-05-27
 description: "![在这里插入图片描述](https://img-blog.csdnimg.cn/3514fa2be8364e20a7c6b502f4d1dcd3.png)"
-categories: ["PostgreSQL 笔记"]
+categories: ["故障排查"]
 tags: ["PostgreSQL"]
 series: []
 ---

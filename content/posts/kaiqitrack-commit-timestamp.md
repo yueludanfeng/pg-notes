@@ -2,7 +2,7 @@
 title: "开启`track_commit_timestamp`"
 date: 2023-09-10
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["统计信息"]
 tags: ["PostgreSQL"]
 series: []
 ---

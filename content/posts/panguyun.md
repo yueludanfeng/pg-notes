@@ -2,7 +2,7 @@
 title: "盘古云"
 date: 2023-06-26
 description: "https://mp.weixin.qq.com/s/5EtPl_OaCFpTyxNHKTnCiA"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "WAL", "内存管理", "分区表", "备份恢复", "执行计划", "流复制", "监控", "索引", "统计信息", "逻辑复制", "锁", "面试", "高可用"]
 series: []
 ---

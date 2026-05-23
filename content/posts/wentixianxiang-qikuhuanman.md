@@ -2,7 +2,7 @@
 title: "问题现象-起库缓慢"
 date: 2025-05-27
 description: "版本pg13.2"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["VACUUM", "WAL", "内存管理", "参数配置", "备份恢复", "安装部署", "流复制"]
 series: []
 ---

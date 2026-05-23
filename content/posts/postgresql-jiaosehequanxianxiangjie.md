@@ -2,7 +2,7 @@
 title: "PostgreSQL 角色和权限详解"
 date: 2023-08-29
 description: "很多PostgreSQL初学者分不清楚，PostgreSQL中的权限在总体上该如何分配管理，本文就解决这个问题。"
-categories: ["PostgreSQL 笔记"]
+categories: ["安全与权限"]
 tags: ["PostgreSQL", "参数配置", "安装部署", "权限"]
 series: []
 ---

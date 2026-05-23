@@ -2,7 +2,7 @@
 title: "PostgreSQL 并行查询相关参数"
 date: 2023-06-19
 description: "在 PostgreSQL 中，有几个参数与并行查询相关。以下是一些常用的参数："
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["PostgreSQL", "VACUUM", "参数配置", "索引"]
 series: []
 ---

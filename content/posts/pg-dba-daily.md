@@ -2,7 +2,7 @@
 title: "PG DBA daily"
 date: 2023-07-25
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["PostgreSQL 运维"]
 tags: ["PostgreSQL"]
 series: []
 ---

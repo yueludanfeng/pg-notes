@@ -2,7 +2,7 @@
 title: "没有阻塞为什么partition of创建子分区很慢？"
 date: 2025-05-27
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["内存管理", "分区表", "索引", "锁"]
 series: []
 ---

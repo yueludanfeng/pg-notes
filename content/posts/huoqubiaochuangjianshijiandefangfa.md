@@ -2,7 +2,7 @@
 title: "获取表创建时间的方法"
 date: 2023-07-07
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["PostgreSQL 运维"]
 tags: ["PostgreSQL"]
 series: []
 ---

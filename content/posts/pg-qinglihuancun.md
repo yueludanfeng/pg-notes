@@ -2,7 +2,7 @@
 title: "PG 清理缓存"
 date: 2023-09-10
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["内存管理"]
 tags: ["PostgreSQL"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "PostgreSQL 进程架构"
 date: 2025-01-12
 description: "![image-20230629202257522](/images/image-20230629202257522.png)"
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["PostgreSQL", "VACUUM", "WAL", "内存管理", "参数配置", "备份恢复", "流复制", "索引", "统计信息", "逻辑复制"]
 series: []
 ---

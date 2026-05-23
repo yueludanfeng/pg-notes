@@ -2,7 +2,7 @@
 title: "对于 cache lookup failed for relation 49197 这个报错"
 date: 2023-07-15
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["内存管理"]
 tags: ["PostgreSQL"]
 series: []
 ---

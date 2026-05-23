@@ -2,7 +2,7 @@
 title: "cache lookup failed for type 75083631"
 date: 2023-07-14
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["内存管理"]
 tags: ["索引"]
 series: []
 ---

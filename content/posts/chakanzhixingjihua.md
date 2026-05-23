@@ -2,7 +2,7 @@
 title: "查看执行计划"
 date: 2023-07-29
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["执行计划"]
 series: []
 ---

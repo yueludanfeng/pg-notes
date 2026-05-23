@@ -2,7 +2,7 @@
 title: "Linux 判断是否内存泄漏_Linux free 查询可用内存和判断是否有内存泄漏"
 date: 2023-07-14
 description: "![](https://img-blog.csdnimg.cn/img_convert/1c20c087dfc0bbbee70da0676c25846d.png)"
-categories: ["PostgreSQL 笔记"]
+categories: ["监控"]
 tags: ["内存管理", "监控"]
 series: []
 ---

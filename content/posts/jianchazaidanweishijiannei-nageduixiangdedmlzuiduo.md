@@ -2,7 +2,7 @@
 title: "检查在单位时间内，哪个对象的dml最多"
 date: 2023-08-30
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["WAL", "备份恢复", "流复制", "索引", "统计信息"]
 series: []
 ---

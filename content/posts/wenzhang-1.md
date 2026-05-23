@@ -2,7 +2,7 @@
 title: "文章 1"
 date: 2023-06-19
 description: "目前有两种方法可以实现，这两种方法都需要机器有两块网卡，例 eth0为内网，eth1为公网ip,两台机器的eth1上分别绑定公网ip都要能正常使用。"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["参数配置", "备份恢复", "流复制", "高可用"]
 series: []
 ---

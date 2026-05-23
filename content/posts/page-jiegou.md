@@ -2,7 +2,7 @@
 title: "page 结构"
 date: 2023-07-08
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["内存管理"]
 series: []
 ---

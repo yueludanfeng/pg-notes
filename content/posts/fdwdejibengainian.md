@@ -2,7 +2,7 @@
 title: "FDW的基本概念"
 date: 2025-05-27
 description: "SQL/MED是为了统一异构数据源的访问方式。2003年SQL/MED加入到ISO/IEC 9075-9标准中，SQL/MED定义为通过foreign-data wrappers（fdw）或datalink（如oracle、pg的dblin"
-categories: ["PostgreSQL 笔记"]
+categories: ["安装部署"]
 tags: ["分区表", "参数配置", "备份恢复", "安装部署", "执行计划", "统计信息", "锁"]
 series: []
 ---

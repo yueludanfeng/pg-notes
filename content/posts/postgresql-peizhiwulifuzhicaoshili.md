@@ -2,7 +2,7 @@
 title: "postgresql 配置物理复制槽示例"
 date: 2023-06-27
 description: "以下是一个示例，演示如何在 PostgreSQL 中配置物理复制槽："
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["PostgreSQL", "WAL", "参数配置", "备份恢复", "复制槽", "流复制"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "pg windows 环境注册成服务"
 date: 2024-09-28
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["PostgreSQL"]
 series: []
 ---

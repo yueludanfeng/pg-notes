@@ -2,7 +2,7 @@
 title: "什么是分区表"
 date: 2025-05-27
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["VACUUM", "内存管理", "分区表", "参数配置", "执行计划", "索引", "统计信息", "锁"]
 series: []
 ---

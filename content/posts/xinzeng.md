@@ -2,7 +2,7 @@
 title: "新增"
 date: 2023-07-14
 description: "passwordcheck 插件, 建议使用社区修改版, 安全性更好"
-categories: ["PostgreSQL 笔记"]
+categories: ["安全与权限"]
 tags: ["PostgreSQL"]
 series: []
 ---

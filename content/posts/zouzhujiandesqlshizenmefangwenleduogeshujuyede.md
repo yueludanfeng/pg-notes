@@ -2,7 +2,7 @@
 title: "走主键的SQL是怎么访问了多个数据页的？"
 date: 2025-05-27
 description: "书接上回 ：[长事务、表膨胀、limit问题的一个经典案例](https://blog.csdn.net/qq_40687433/article/details/137248306?spm=1001.2014.3001.5501)，这篇文章"
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["VACUUM", "参数配置", "执行计划", "索引", "统计信息"]
 series: []
 ---

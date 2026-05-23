@@ -2,7 +2,7 @@
 title: "https://repmgr.org/docs/repmgr.html"
 date: 2023-07-11
 description: "repmgr --help"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["WAL", "参数配置", "备份恢复", "安装部署", "流复制", "高可用"]
 series: []
 ---

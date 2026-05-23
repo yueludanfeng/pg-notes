@@ -2,7 +2,7 @@
 title: "PG SQL优化"
 date: 2023-09-10
 description: "https://explain.depesz.com"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["执行计划"]
 series: []
 ---

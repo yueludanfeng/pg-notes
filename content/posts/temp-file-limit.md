@@ -2,7 +2,7 @@
 title: "temp_file_limit"
 date: 2024-01-27
 description: "`temp_file_limit` 是 PostgreSQL 中的一个配置参数，用于限制临时文件的大小。这个参数指定了在执行排序、合并或其他需要使用临时文件的操作时，每个查询可以使用的最大临时文件大小。如果查询尝试使用超过这个限制的临时空间"
-categories: ["PostgreSQL 笔记"]
+categories: ["参数配置"]
 tags: ["参数配置"]
 series: []
 ---

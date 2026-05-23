@@ -2,7 +2,7 @@
 title: "问题现象"
 date: 2025-05-27
 description: "postgresql中update执行语句报错`too many range table entries`"
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["分区表", "执行计划", "索引"]
 series: []
 ---

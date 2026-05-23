@@ -2,7 +2,7 @@
 title: "谁阻塞谁_锁冲突"
 date: 2023-08-23
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["DBA", "锁", "锁冲突"]
 series: []
 ---

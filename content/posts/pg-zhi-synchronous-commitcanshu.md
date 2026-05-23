@@ -2,7 +2,7 @@
 title: "pg 之 synchronous_commit参数"
 date: 2023-06-27
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["参数配置"]
 series: []
 ---

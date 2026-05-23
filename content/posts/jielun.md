@@ -2,7 +2,7 @@
 title: "结论"
 date: 2026-03-06
 description: "2025-03-06 定位结论:"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["内存管理", "分区表", "参数配置", "备份恢复", "锁"]
 series: []
 ---

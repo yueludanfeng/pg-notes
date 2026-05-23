@@ -2,7 +2,7 @@
 title: "代码实现"
 date: 2024-08-30
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["参数配置"]
 tags: ["PostgreSQL"]
 series: []
 ---

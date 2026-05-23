@@ -2,7 +2,7 @@
 title: "索引分裂"
 date: 2025-05-27
 description: "索引块快写满时就会发生索引分裂，索引分裂分为两种情况，55和91："
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["分区表", "参数配置", "索引"]
 series: []
 ---

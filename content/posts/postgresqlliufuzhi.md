@@ -2,7 +2,7 @@
 title: "PostgreSQL流复制"
 date: 2025-05-27
 description: "Streaming Replication是pg9.0开始提供的传递WAL日志的方式，只要primary库一产生日志，就会立马传递到standby库。"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["PostgreSQL", "VACUUM", "WAL", "参数配置", "备份恢复", "流复制", "监控", "索引", "锁"]
 series: []
 ---

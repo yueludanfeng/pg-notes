@@ -2,7 +2,7 @@
 title: "分区表汇总"
 date: 2023-06-19
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["分区表"]
 series: []
 ---

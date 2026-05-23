@@ -2,7 +2,7 @@
 title: "could not access status of transaction 118831"
 date: 2023-07-14
 description: ">  参考: [PostgreSQL学习随笔2 clog(xact)损坏 - 墨天轮 (modb.pro)](https://www.modb.pro/db/85220)"
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["备份恢复"]
 series: []
 ---

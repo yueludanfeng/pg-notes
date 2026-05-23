@@ -2,7 +2,7 @@
 title: "参考"
 date: 2023-08-01
 description: "* [Auto_explain Intro: Auto-Log Slow Postgres Query Plans (scalegrid.io)](https://scalegrid.io/blog/introduction-to-auto"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["参数配置", "执行计划", "统计信息"]
 series: []
 ---

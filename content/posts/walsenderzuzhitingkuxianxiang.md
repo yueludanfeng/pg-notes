@@ -2,7 +2,7 @@
 title: "walsender阻止停库现象"
 date: 2025-05-27
 description: "生产停库日志输出如下："
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["VACUUM", "WAL", "内存管理", "参数配置", "备份恢复", "流复制", "统计信息", "逻辑复制", "锁"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "postmaster checkpointer 与 walsender 的关系"
 date: 2025-01-05
 description: "![](/images/Pasted%20image%2020250105001958.png)"
-categories: ["PostgreSQL 笔记"]
+categories: ["参数配置"]
 tags: ["WAL"]
 series: []
 ---

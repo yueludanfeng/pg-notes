@@ -2,7 +2,7 @@
 title: "简介"
 date: 2023-06-29
 description: "JSON 代表 JavaScript Object Notation。它是一种开放标准格式，将数据组织成 [RFC 7159](https://tools.ietf.org/html/rfc7159) 中详述的键/值对和数组"
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["Docker", "执行计划", "索引"]
 series: []
 ---

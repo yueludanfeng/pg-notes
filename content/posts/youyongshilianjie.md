@@ -2,7 +2,7 @@
 title: "有用是连接"
 date: 2023-07-30
 description: "```bash"
-categories: ["PostgreSQL 笔记"]
+categories: ["PostgreSQL 运维"]
 tags: ["SQL代码"]
 series: []
 ---

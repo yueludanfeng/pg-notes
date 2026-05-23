@@ -2,7 +2,7 @@
 title: "ch1 数据系统架构中的利弊权衡"
 date: 2025-05-27
 description: "ddia-v2中文版地址：<https://github.com/Vonng/ddia/tree/v2>"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["内存管理", "分区表", "参数配置", "备份恢复", "监控", "索引", "锁"]
 series: []
 ---

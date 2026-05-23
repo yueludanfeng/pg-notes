@@ -2,7 +2,7 @@
 title: "PostgreSQL的元组、页面结构及索引查找原理"
 date: 2023-06-26
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["PostgreSQL", "物理结构", "索引"]
 series: []
 ---

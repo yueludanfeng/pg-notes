@@ -2,7 +2,7 @@
 title: "事务隔离级别"
 date: 2025-05-27
 description: "**PG的事务**"
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["VACUUM", "WAL", "内存管理", "参数配置", "备份恢复", "流复制", "监控", "索引", "锁", "高可用"]
 series: []
 ---

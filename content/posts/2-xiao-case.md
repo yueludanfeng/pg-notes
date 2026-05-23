@@ -2,7 +2,7 @@
 title: "-2. 小 case"
 date: 2023-06-27
 description: "pg_start_backup ()  完成之后, 需要执行 pg_stop_backup ()"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["VACUUM", "WAL", "内存管理", "分区表", "参数配置", "备份恢复", "执行计划", "流复制", "监控", "索引", "统计信息", "逻辑复制", "锁", "高可用"]
 series: []
 ---

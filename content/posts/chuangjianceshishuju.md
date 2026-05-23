@@ -2,7 +2,7 @@
 title: "创建测试数据"
 date: 2023-08-20
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["参数配置", "备份恢复"]
 series: []
 ---

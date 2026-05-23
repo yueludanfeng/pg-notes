@@ -2,7 +2,7 @@
 title: "供学习参考 :"
 date: 2023-07-20
 description: "> CentOS 7.9 安装 PG 13 + repmgr +pgpool 实现负载均衡读写分离"
-categories: ["PostgreSQL 笔记"]
+categories: ["流复制"]
 tags: ["WAL", "参数配置", "备份恢复", "安装部署", "流复制", "监控", "连接池", "高可用"]
 series: []
 ---

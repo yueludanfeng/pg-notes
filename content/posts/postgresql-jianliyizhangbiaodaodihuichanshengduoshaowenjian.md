@@ -2,7 +2,7 @@
 title: "PostgreSQL 建立一张表到底会产生多少文件"
 date: 2023-09-28
 description: "开头还是介绍一下群，如果感兴趣PolarDB ,MongoDB ,MySQL ,PostgreSQL ,Redis, Oceanbase, 等有问题，有需求都可以加群群内有各大数据库行业大咖，CTO，可以解决你的问题。加群请联系 liuau"
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["PostgreSQL", "体系结构", "安装部署", "索引"]
 series: []
 ---

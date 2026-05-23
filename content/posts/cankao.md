@@ -2,7 +2,7 @@
 title: "参考"
 date: 2024-01-27
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["锁与并发"]
 tags: ["锁"]
 series: []
 ---

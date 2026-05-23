@@ -2,7 +2,7 @@
 title: "简介"
 date: 2024-08-30
 description: "pg_probackup 是用于管理 PostgreSQL 数据库集群的备份和恢复的实用程序。它旨在执行 PostgreSQL 实例的定期备份，使您能够在发生故障时还原服务器。pg_probackup支持PostgreSQL 9.5或更高版"
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["WAL", "参数配置", "备份恢复", "安装部署", "流复制"]
 series: []
 ---

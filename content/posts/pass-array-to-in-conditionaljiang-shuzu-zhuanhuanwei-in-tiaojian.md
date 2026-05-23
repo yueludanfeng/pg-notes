@@ -2,7 +2,7 @@
 title: "Pass array to IN conditional(将 数组 转换为 IN 条件)"
 date: 2023-07-28
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["PostgreSQL 运维"]
 tags: ["PostgreSQL"]
 series: []
 ---

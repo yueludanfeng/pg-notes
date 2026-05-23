@@ -2,7 +2,7 @@
 title: "天赋异禀"
 date: 2025-05-27
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["数据迁移"]
 tags: ["PostgreSQL"]
 series: []
 ---

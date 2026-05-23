@@ -2,7 +2,7 @@
 title: "编译 pgpool 并支持 ssl"
 date: 2023-06-26
 description: "要编译支持 SSL 的 Pgpool，您需要按照以下步骤进行操作："
-categories: ["PostgreSQL 笔记"]
+categories: ["安装部署"]
 tags: ["参数配置", "安装部署", "连接池"]
 series: []
 ---

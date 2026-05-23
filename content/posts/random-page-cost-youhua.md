@@ -2,7 +2,7 @@
 title: "random_page_cost 优化"
 date: 2023-08-12
 description: "在 SSD 环境, 建议将其值由 4 改为 1"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["参数配置"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "拉取镜像, 第一次拉取一次即可. 或者需要的时候执行, 将更新到最新镜像版本."
 date: 2024-08-30
 description: "参考: [blog/202307/20230710_03.md at master · digoal/blog (github.com)](https://github.com/digoal/blog/blob/master/202307/"
-categories: ["PostgreSQL 笔记"]
+categories: ["备份恢复与高可用"]
 tags: ["Docker", "参数配置", "备份恢复"]
 series: []
 ---

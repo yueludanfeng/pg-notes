@@ -2,7 +2,7 @@
 title: "命令选项"
 date: 2025-05-27
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["分区表"]
 tags: ["WAL", "分区表", "索引", "统计信息", "锁"]
 series: []
 ---

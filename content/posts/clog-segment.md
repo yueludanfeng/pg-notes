@@ -2,7 +2,7 @@
 title: "clog segment"
 date: 2025-05-27
 description: "放眼所有关系型数据库，PostgreSQL的clog也是很特殊的日志。CLOG的存在跟PG的MVCC机制不无关系。一些事务ID、clog的基础知识本篇不会涉及，感谢兴趣的可参考[clog和hintbits](https://blog.csd"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["VACUUM", "WAL", "内存管理", "参数配置", "备份恢复", "流复制", "索引"]
 series: []
 ---

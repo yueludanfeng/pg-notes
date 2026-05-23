@@ -2,7 +2,7 @@
 title: "SQL性能与执行计划"
 date: 2025-05-27
 description: "这篇文章主要是讲pg运维常见问题，两三年见一次的疑难杂症就不说了。"
-categories: ["PostgreSQL 笔记"]
+categories: ["VACUUM与膨胀"]
 tags: ["Docker", "VACUUM", "WAL", "内存管理", "分区表", "参数配置", "备份恢复", "执行计划", "流复制", "监控", "索引", "统计信息", "连接池", "逻辑复制", "锁"]
 series: []
 ---

@@ -2,7 +2,7 @@
 title: "查看当前持续时间超过 1h 的活跃长事务"
 date: 2023-08-16
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["统计信息"]
 tags: ["PostgreSQL"]
 series: []
 ---

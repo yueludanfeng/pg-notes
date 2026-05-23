@@ -2,7 +2,7 @@
 title: "PG 设置表为只读"
 date: 2023-08-11
 description: "```sql"
-categories: ["PostgreSQL 笔记"]
+categories: ["安全与权限"]
 tags: ["只读"]
 series: []
 ---

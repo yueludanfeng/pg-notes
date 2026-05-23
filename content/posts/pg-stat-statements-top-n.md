@@ -2,7 +2,7 @@
 title: "pg_stat_statements_TOP N"
 date: 2023-08-16
 description: "数据库是较大型的应用，对于繁忙的数据库，需要消耗大量的内存、CPU、IO、网络资源。"
-categories: ["PostgreSQL 笔记"]
+categories: ["SQL 优化"]
 tags: ["PostgreSQL", "TOP_SQL", "VACUUM", "WAL", "内存管理", "参数配置", "安装部署", "执行计划", "流复制", "索引", "统计信息"]
 series: []
 ---

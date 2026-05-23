@@ -2,7 +2,7 @@
 title: "pg_recovery使用"
 date: 2023-06-26
 description: ""
-categories: ["PostgreSQL 笔记"]
+categories: ["PostgreSQL 运维"]
 tags: ["PostgreSQL"]
 series: []
 ---

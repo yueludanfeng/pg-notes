@@ -2,7 +2,7 @@
 title: "核心代码"
 date: 2023-07-07
 description: "> 将 fpp_xxx_pkey 替换为实际的索引名称即可"
-categories: ["PostgreSQL 笔记"]
+categories: ["索引"]
 tags: ["索引"]
 series: []
 ---
