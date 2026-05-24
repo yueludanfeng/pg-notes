@@ -71,3 +71,13 @@ showTableOfContents: true
 | Use The Index, Luke | SQL 索引原理与优化教程 | [use-the-index-luke.com](https://use-the-index-luke.com/zh) |
 | PostgreSQL Exercises | 在线交互式 SQL 练习 | [pgexercises.com](https://pgexercises.com/) |
 | The Internals of PostgreSQL | PG 内核原理（日文/英文/中文） | [interdb.jp](https://www.interdb.jp/pg/) |
+| PG 开发指南 | 知乎专栏，PostgreSQL 开发与实战 | [zhihu.com](https://www.zhihu.com/column/c_1452567507496689664) |
+| 码农有道 | 知乎博主，数据库底层原理与 C 语言 | [zhihu.com](https://www.zhihu.com/people/dcxmn) |
+| PG 内核学习资料 | 知乎文章，PG 内核学习路线与资源汇总 | [zhihu.com](https://zhuanlan.zhihu.com/p/98021328) |
+| Pgkernel | PostgreSQL 内核 Wiki 目录 | [wiki.postgresql.org](https://wiki.postgresql.org/wiki/Pgkernel) |
+| PostgreSQL 数据库内核分析 | GitBook 在线书 | [gitbooks.io](https://walleipt.gitbooks.io/postgresql/content/) |
+| 于巍 | 墨天轮博主，PG 内核系列文章 | [modb.pro](https://www.modb.pro/u/396575) |
+| chirpyli | 墨天轮 PG 内核主题 | [modb.pro](https://www.modb.pro/topic/607306) |
+| 源码入门（PDF） | PG 源码入门参考文档 | [PDF](https://itdks.su.bcebos.com/6bb7615932d24fabac9b53529166f106.pdf) |
+| 数据库内核月报 | 阿里云数据库内核团队月度技术分享 | [taobao.org](http://mysql.taobao.org/monthly/2020/04/01/) |
+| 非我在 | 博客园 PG 内核分析系列 | [cnblogs.com](https://www.cnblogs.com/flying-tiger/category/881004.html) |
