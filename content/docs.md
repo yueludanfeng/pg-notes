@@ -60,7 +60,7 @@ showTableOfContents: true
 | PGfans 中文社区 | PostgreSQL 中文问答社区 | [pgfans.cn](https://www.pgfans.cn/) |
 | PG 中文维基 | 中文 Wiki 知识库 | [wiki.postgresql.ac.cn](https://wiki.postgresql.ac.cn/) |
 
-## 学习资源
+## 补充资料
 
 | 名称 | 说明 | 链接 |
 |------|------|------|
