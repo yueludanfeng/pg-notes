@@ -2,5 +2,19 @@
   <span id="busuanzi_container_site_uv" style="display:none;">
     您是本网站第 <span id="busuanzi_value_site_uv"></span> 个访问者，谢谢！
   </span>
+  <span id="busuanzi_fallback" style="display:none;">
+    感谢您的访问！
+  </span>
 </div>
-<script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+  // 超时 5 秒后显示兜底文案
+  setTimeout(function() {
+    var el = document.getElementById('busuanzi_container_site_uv');
+    if (el && (el.style.display === 'none' || el.style.display === '')) {
+      el.style.display = 'none';
+      var fb = document.getElementById('busuanzi_fallback');
+      if (fb) fb.style.display = 'inline';
+    }
+  }, 5000);
+</script>
