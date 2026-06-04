@@ -63,3 +63,13 @@
   name = "关于"
   pageRef = "about"
   weight = 40
+
+[[main]]
+  name = "AI 相关"
+  pageRef = "ai"
+  weight = 36
+
+[[footer]]
+  name = "AI 相关"
+  pageRef = "ai"
+  weight = 36
